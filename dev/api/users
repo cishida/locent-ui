@@ -1,0 +1,19 @@
+[{
+	"id": "cust_sjskjd1221",
+	"status": "active",
+	"email": "opemipoaikomo@gmail.com",
+	"createdAt": "11 Nov 2015 18:59:00",
+	"role": "administrator"
+},{
+	"id": "cus_dijnwj22334s",
+	"status": "inactive",
+	"email": "ezra@cfezra.com",
+	"createdAt": "11 Nov 2015 18:59:00",
+	"role": "developer"
+},{
+	"id": "cus_dijnwj22334s",
+	"status": "inactive",
+	"email": "shola@paystack.co",
+	"createdAt": "11 Nov 2015 18:59:00",
+	"role": "readonly"
+}]

@@ -1,0 +1,22 @@
+<div class="col-md-6 col-lg-5 center-block access-wrapper animated fadeIn">
+    <hr>
+    <div class="text-center">
+        <h3 class="m-t-lg">Login to Your Locent Dashboard</h3>
+        <h4 class="text-muted m-t-xs">Welcome back. Please enter your email address and password to access your dashboard</h4>
+    </div>
+    <form class="m-t-xxl" name="loginForm">
+        <div class="form-group">
+            <input type="email" ng-model="credentials.email" class="form-control input-lg" placeholder="Email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" ng-model="credentials.password" class="form-control input-lg" placeholder="Password" required>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-lg btn-success btn-block" ng-disabled="loginForm.$invalid" ng-click="login()" ng-loading="loggedIn">Login</button>
+        </div>
+    </form>
+    <hr>
+    <div class="padder text-center">
+        <a href="">Forgot your password?</a>
+    </div>
+</div>

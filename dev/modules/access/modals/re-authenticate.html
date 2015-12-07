@@ -1,0 +1,15 @@
+<div class="modal-header">Renew your session</div>
+<form name="loginForm">
+    <div class="modal-body">
+        <h5 class="text-center font-bold m-b-md">Your session expired. Please enter your password to authenticate and continue</h5>
+        <div class="form-group clear">
+            <label class="col-lg-4 control-label">Password</label>
+            <div class="col-lg-8">
+                <input type="password" class="form-control" ng-model="credentials.password" placeholder="Your Password">
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-success btn-block pull-right" ng-disabled="loginForm.$invalid" ng-loading="loggedIn" ng-click="login()">Login</button>
+    </div>
+</form>

@@ -1,0 +1,42 @@
+<div class="col-md-10 center-block access-wrapper animated fadeIn">
+    <div class="row">
+        <div class="col-md-5 text-white">
+            <div class="m-t-xxl m-b-lg clear hidden-xs"></div>
+            <h2 class="m-n">Create a Paystack account</h2>
+            <h4 class="m-t-xs">Paystack is everything you need to accept one-off and recurring payments online.</h4>
+            <hr>
+            <h5 class="text-muted m-t-xs m-b-md">At Paystack, we are on a mission to deliver a safe and convenient payment experience for customers and merchants.</h5>
+        </div>
+        <div class="col-md-6 pull-right">
+            <form name="signupForm">
+                <div class="form-group">
+                    <input type="email" ng-model="credentials.email" class="form-control input-lg" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" ng-model="credentials.password" class="form-control input-lg" placeholder="Password" required>
+                </div>
+                <div class="row">
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <input type="text" ng-model="credentials.first_name" class="form-control input-lg" placeholder="First Name" required>
+                        </div>
+                    </div>
+                    <div class="col-xs-6">
+                        <div class="form-group">
+                            <input type="text" ng-model="credentials.last_name" class="form-control input-lg" placeholder="Last Name" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" ng-model="credentials.business_name" class="form-control input-lg" placeholder="Business Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" ng-model="credentials.phone" class="form-control input-lg" placeholder="Phone Number" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-success btn-block" ng-disabled="signupForm.$invalid" ng-click="signup()" ng-loading="accountCreated">Create My Account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

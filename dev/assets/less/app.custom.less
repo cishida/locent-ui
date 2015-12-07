@@ -1,0 +1,351 @@
+/* === Imported style overrides === */
+
+.back-btn {
+    line-height: 45px;
+    float: left;
+    margin-right: 10px;
+}
+
+.badge-lg {
+    padding: 5px 15px;
+    font-size: 14px;
+    border-radius: 15px
+}
+
+.link-row {
+    cursor: pointer;
+    &:hover {
+        background: #f5f5f5;
+        border-radius: 2px;
+    }
+}
+
+.table {
+    font-size: 15px;
+    thead {
+        tr > th {
+            font-weight: bold;
+        }
+    }
+}
+
+.table-info {
+    font-size: 15px;
+    small {
+        display: block;
+        color: @text-muted;
+        i {
+            font-size: 10px;
+        }
+    }
+}
+
+.no-data {
+    width: 500px;
+    max-width: 90%;
+    margin: 40px auto;
+    p {
+        margin: 0 auto 10px;
+        max-width: 300px;
+    }
+}
+
+.chart-wrapper {
+    height: 150px;
+}
+
+.popup-overlay,
+.popup-close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.popup-overlay {
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.95);
+}
+
+.popup-close {
+    z-index: -1;
+}
+
+.popup {
+    width: 80%;
+    max-width: 500px;
+    left: 0;
+    right: 0;
+    margin: 100px auto;
+    overflow: hidden;
+}
+
+.panel {
+    &.panel-default {
+        .panel-heading {
+            color: #767676;
+            background-color: #F6F8F8;
+        }
+    }
+    &.pad-panel {
+        padding: 10px 20px;
+    }
+}
+
+.form-group-item {
+    border-bottom: 1px solid #EAEAEA;
+    padding: 10px 20px;
+    margin-bottom: 0;
+    position: relative;
+    label {
+        font-weight: 600;
+        color: #27517D;
+        font-size: 13px;
+    }
+    &.form-select {
+        position: relative;
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        &:after {
+            position: absolute;
+            right: 20px;
+            bottom: 18px;
+            font-family: 'FontAwesome';
+            content: "\f0dc";
+        }
+    }
+    .form-control {
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .btn {
+        &.btn-dark {
+            &.shell {
+                background-color: transparent;
+                border: 1px solid 2px;
+            }
+        }
+        i {
+            margin-left: 10px;
+        }
+    }
+}
+
+.ng-error {
+    &:hover {
+        z-index: 10;
+    }
+    .ng-error-div {
+        right: 10px;
+        top: 5px;
+        pointer-events: auto;
+        &:hover {
+            ul {
+                display: block;
+            }
+        }
+        ul {
+            display: none;
+            width: 160px;
+            right: 0;
+            left: auto;
+            position: absolute;
+            top: 111%;
+            margin: 0;
+            padding: 5px;
+            background: white;
+            border: solid 1px rgb(232, 232, 232);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, 0.05);
+            li {
+                border-bottom: solid 1px whitesmoke;
+                padding: 5px 10px;
+                line-height: 1.2;
+                text-align: left;
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }
+}
+
+.list-group-item {
+    position: relative;
+    .status-tag {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        text-shadow: none;
+        background: none;
+        color: @brand-success;
+        border: solid 1px @brand-success;
+        cursor: pointer;
+        &:hover {
+            background: lighten(@brand-success, 50%);
+        }
+    }
+}
+
+.col.disabled {
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.choose-dates {
+    span {
+        float: left;
+    }
+    datepicker {
+        width: auto;
+        margin: 0 10px;
+        font-family: inherit;
+        input {
+            width: 120px;
+        }
+    }
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.dropdown-menu {
+    border-radius: 3px;
+    border: 0;
+    box-shadow: 0 2px 1px rgba(0, 0, 0, 0.04), 0 0 0 1px rgba(0, 0, 0, 0.05);
+    left: 50%;
+    transform: translateX(-50%);
+    &:after {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 37px;
+        height: 12px;
+        top: -12px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        background-image: url("/assets/img/dropdown_arrow.png");
+        background-size: 100% 100%;
+    }
+    &.arrow-dk {
+        &:after {
+            background-image: url("/assets/img/dropdown_arrow_dk.png");
+        }
+    }
+}
+
+
+/* === Loader === */
+
+.loader {
+    font-size: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 20px;
+    width: 4em;
+    height: 1em;
+    margin: 0 auto;
+    z-index: 100;
+}
+
+.dot {
+    width: 1em;
+    height: 1em;
+    border-radius: 0.5em;
+    background: #333;
+    position: absolute;
+    animation-duration: 0.5s;
+    animation-timing-function: ease;
+    animation-iteration-count: infinite;
+}
+
+.loader.white .dot {
+    background: white;
+}
+
+.btn {
+    .loader {
+        top: 50%;
+        margin-top: -0.5em;
+        .dot {
+            background: white;
+        }
+    }
+}
+
+.dot1,
+.dot2 {
+    left: 0;
+}
+
+.dot3 {
+    left: 1.5em;
+}
+
+.dot4 {
+    left: 3em;
+}
+
+@keyframes reveal {
+    from {
+        transform: scale(0.001);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slide {
+    to {
+        transform: translateX(1.5em)
+    }
+}
+
+.dot1 {
+    animation-name: reveal;
+}
+
+.dot2,
+.dot3 {
+    animation-name: slide;
+}
+
+.dot4 {
+    animation-name: reveal;
+    animation-direction: reverse;
+}
+
+
+/* === Main Styles === */
+
+.header {
+    height: 60px;
+    line-height: 60px;
+    .logo {
+        width: 180px;
+        img {
+            max-width: 100%;
+        }
+    }
+    .dropdown-menu {
+        li {
+            line-height: 1;
+            a {
+                padding: 10px 15px;
+                &:hover {
+                    background: none;
+                    color: @brand-info;
+                }
+            }
+        }
+    }
+}

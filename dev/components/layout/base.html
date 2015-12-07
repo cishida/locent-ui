@@ -1,0 +1,46 @@
+<div class="header">
+    <div class="container">
+        <div class="pull-left">
+            <div class="logo">
+                <img class="logo" src="/assets/img/logo_small.png" alt="">
+            </div>
+            <!--             <ul class="header-menu">
+                <li><a ui-sref="app.transactions" ui-sref-active="active"><i class="fa fa-filter"></i>Transactions</a></li>
+                <li><a ui-sref="app.customers" ui-sref-active="active"><i class="fa fa-user"></i>Customers</a></li>
+                <li><a ui-sref="app.subscriptions" ui-sref-active="active"><i class="fa fa-cubes"></i>Subscriptions</a></li>
+                <li><a ui-sref="app.settings" ui-sref-active="active"><i class="fa fa-lock"></i>Settings</a></li>
+            </ul> -->
+        </div>
+        <div class="pull-right">
+            <div class="logged-in">
+                <div uib-dropdown class="dropdown">
+                    <a class="dropdown-toggle clear" id="user-settings" uib-dropdown-toggle>
+                        <span class="thumb-sm avatar pull-right m-l-sm"><img src="assets/img/avatar.png" alt="{{currentSession.user.firstname}} {{currentSession.user.lastname}}">
+                        </span>
+                        <span class="hidden-sm hidden-md">{{currentSession.user.firstname}} {{currentSession.user.lastname}}</span> <b class="caret"></b>
+                    </a>
+                    <ul class="uib-dropdown-menu arrow-dk" aria-labelledby="user-settings">
+                        <li class="wrapper b-b m-b-sm bg-light m-t-n-xs">
+                            <span class="text-truncate">{{currentSession.user.email}}</span>
+                        </li>
+                        <li>
+                            <a>Settings</a>
+                        </li>
+                        <li>
+                            <hr class="m-n">
+                            <a ng-click="logout()">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--                 <div class="profile">
+                    <p class="username font-bold text-ellipsis">{{currentSession.user.first_name}} {{currentSession.user.last_name}}</p>
+                    <p class="company text-ellipsis">{{currentSession.account.business_name}}</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content-wrap">
+    <hr class="m-t-sm">
+    <div class="container" ui-view></div>
+</div>

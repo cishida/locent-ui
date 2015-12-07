@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'FuturaBoldRegular';
+    src: url('../fonts/futura-bold-webfont.eot');
+    src: local('☺'), url('../fonts/futura-bold-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/futura-bold-webfont.woff') format('woff'), url('../fonts/futura-bold-webfont.ttf') format('truetype'), url('../fonts/futura-bold-webfont.svg#FuturaBoldRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
