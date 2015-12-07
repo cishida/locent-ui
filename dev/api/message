@@ -1,0 +1,9 @@
+{
+  "message": {
+      "customer_id": "2354618970",
+      "product_id": "23546453970",
+      "sender": "Paul",
+      "body": "hello",
+      "status": "sent",
+  }
+}

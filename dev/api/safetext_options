@@ -1,0 +1,10 @@
+{
+  "safetext_options": {
+      "opt_in_message": "",
+      "opt_in_refusal_message": "",
+      "welcome_message": "welcome to Locent",
+      "transactional_message": "your transaction is in progress",
+      "cancellation_message": "your transaction as been cancelled",
+      "confirmation_message": "your transaction was successful"
+  }
+}

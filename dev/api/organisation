@@ -1,0 +1,9 @@
+{
+  "organisation": {
+      "organisation_name": "Locent",
+      "primary_user_id": "1234567890",
+      "email": "johndoe@locent.com",
+      "phone": "2349028285674",
+      "client_key": 0987654321",
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+      "name": "Sugar",
+      "has_items": true",
+  },
+  {
+      "name": "Milk",
+      "has_items": true",
+  },
+  {
+      "name": "Cocoa",
+      "has_items": true",
+  }
+]

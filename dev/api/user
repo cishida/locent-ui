@@ -1,0 +1,9 @@
+{
+  "user": {
+      "firstname": "John",
+      "lastname": "Doe",
+      "email": "johndoe@locent.com",
+      "password": "password",
+      "role": Admin",
+  }
+}

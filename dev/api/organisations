@@ -1,0 +1,26 @@
+[
+  {
+      "id": "0987654321",
+      "organisation_name": "Locent",
+      "primary_user_id": "1234567890",
+      "email": "johndoe@locent.com",
+      "phone": "2349028285674",
+      "client_key": 0987654321",
+  },
+  {
+      "id": "0767654321",
+      "organisation_name": "Amazon",
+      "primary_user_id": "1234567890",
+      "email": "johndoe@locent.com",
+      "phone": "2349028285674",
+      "client_key": 0987654321",
+  },
+  {
+      "id": "0987648321",
+      "organisation_name": "Facebook",
+      "primary_user_id": "1234567890",
+      "email": "johndoe@locent.com",
+      "phone": "2349028285674",
+      "client_key": 0987654321",
+  }
+]
