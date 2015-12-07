@@ -4008,3 +4008,6 @@ a.text-black:hover {
 .navigation li:hover {
   border-bottom: 2px solid grey;
 }
+.active {
+  border-bottom: 2px solid grey !important;
+}

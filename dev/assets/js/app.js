@@ -20,6 +20,9 @@ angular.module('app', [
         'app.notificationService',
         'app.apiFactories',
         'app.access',
+        'app.keyword',
+        'app.clearcart',
+        'app.safetext',
         'app.dashboard'
     ])
     .constant('DEFAULTS', {
