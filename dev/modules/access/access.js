@@ -5,14 +5,14 @@ angular.module('app.access', [])
         $stateProvider.state('access', {
             url: '',
             abstract: true,
-            templateUrl: '/modules/access/base.html'
+            templateUrl: 'modules/access/base.html'
         }).state('access.login', {
             url: '/login',
-            templateUrl: '/modules/access/login.html',
+            templateUrl: 'modules/access/login.html',
             controller: 'LoginCtrl'
         }).state('access.signup', {
             url: '/signup',
-            templateUrl: '/modules/access/signup.html',
+            templateUrl: 'modules/access/signup.html',
             controller: 'SignupCtrl'
         })
     }

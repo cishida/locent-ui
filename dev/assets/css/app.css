@@ -3989,3 +3989,22 @@ a.text-black:hover {
   background: none;
   color: #2D91D9;
 }
+.navigation {
+  height: 60px;
+  line-height: 50px;
+  padding-left: 20%;
+  padding-right: 20%;
+  margin-top: 20px;
+}
+.navigation li {
+  width: 25%;
+  height: 60px;
+  float: left;
+  list-style: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: small !important;
+}
+.navigation li:hover {
+  border-bottom: 2px solid grey;
+}
