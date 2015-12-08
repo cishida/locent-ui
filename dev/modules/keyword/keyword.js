@@ -22,6 +22,9 @@ angular.module('app.keyword', ['ui.router'])
       }, {
            title: 'Messages',
            url: 'two.tpl.html'
+      }, {
+           title: 'Chat',
+           url: 'three.tpl.html'
       }];
 
    $scope.currentTab = 'one.tpl.html';
