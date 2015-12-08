@@ -369,7 +369,7 @@ a.list-group-item.hover {
 }
 .panel {
   border-radius: 2px;
-  border-color: #ECECEC;
+  border-color: #E0E0E0;
 }
 .panel .accordion-toggle {
   font-size: 14px;
@@ -4021,14 +4021,23 @@ a.text-black:hover {
   color: #3676C8;
   border-bottom: 2px solid #3676C8;
 }
-.tabs li {
+.tabs ul {
+  padding: 50px 0 0;
   list-style: none;
-  width: 10%;
+}
+.tabs li {
   font-size: small;
   text-transform: uppercase;
+  height: 45px;
+  line-height: 45px;
+  margin: 0;
+  border-bottom: solid 1px whitesmoke;
   color: #656565;
   display: block;
   cursor: pointer;
+}
+.tabs li:last-child {
+  border-bottom: 0;
 }
 .tabs li.active {
   color: #3676C8;

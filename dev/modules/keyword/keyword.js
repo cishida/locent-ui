@@ -5,35 +5,21 @@ angular.module('app.keyword', ['ui.router'])
         $stateProvider.state('app.keyword', {
             url: '/keyword-checkout',
             templateUrl: 'modules/keyword/index.html',
-            controller: 'keywordCtrl'
+            controller: 'KeywordCtrl',
+            redirectTo: 'app.keyword.analytics'
+        }).state('app.keyword.analytics', {
+            url: '/analytics',
+            templateUrl: 'modules/keyword/analytics.html',
+            controller: 'KeywordAnalyticsCtrl'
         })
     }
 ])
 
-.controller('keywordCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+.controller('KeywordCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+
+.controller('KeywordAnalyticsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
     $scope.labels = ["11/9", "11/10", "11/11", "11/12", "11/13", "11/14", "Today"];
     $scope.data = [
         [0, 0, 0, 0, 0, 0, 0]
     ];
-
-    $scope.tabs = [{
-           title: 'Analytics',
-           url: 'one.tpl.html'
-      }, {
-           title: 'Messages',
-           url: 'two.tpl.html'
-      }, {
-           title: 'Chat',
-           url: 'three.tpl.html'
-      }];
-
-   $scope.currentTab = 'one.tpl.html';
-
-   $scope.onClickTab = function (tab) {
-      $scope.currentTab = tab.url;
-   }
-
-   $scope.isActiveTab = function(tabUrl) {
-      return tabUrl == $scope.currentTab;
-   }
 }])

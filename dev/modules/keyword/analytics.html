@@ -1,0 +1,58 @@
+<div class="panel wrapper">
+    <div class="col-md-12">
+        <div class="col-md-4 m-l-n">
+            <select name="account" class="form-control m-b">
+                <option value="option 1">Messages sent</option>
+                <option value="option 2">Conversion Rate</option>
+                <option value="option 3">Revenue</option>
+                <option value="option 4">Orders Placed</option>
+            </select>
+        </div>
+        <div class="col-md-2 pull-right">
+            <select name="account" class="form-control m-b">
+                <option value="option 1">Today</option>
+                <option value="option 2">Yesterday</option>
+                <option value="option 3">Last week</option>
+                <option value="option 4">Last month</option>
+                <option value="option 4">Last 3 months</option>
+                <option value="option 4">Last 6 months</option>
+            </select>
+        </div>
+        <div class="col-md-2 pull-right">
+            <select name="account" class="form-control m-b  ">
+                <option value="option 1">Hourly</option>
+                <option value="option 2">Daily</option>
+                <option value="option 3">Weekly</option>
+                <option value="option 4">Monthly</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <div class="chart-wrapper m-b-md">
+        <div class="no-data">No data available</div>
+        <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="graphOptions">
+        </canvas>
+    </div>
+</div>
+<div class="panel clearfix">
+    <div class="col-md-12">
+        <div class="row wrapper-lg">
+            <div class="col-md-3">
+                <h4 class="m-n">Messages Sent <small class="text-success m-l-sm"><i class="fa fa-caret-up"></i> +3.24%</small></h4>
+                <h2 class="m-t-xs">15,332</h2>
+            </div>
+            <div class="col-md-3">
+                <h4 class="m-n">Conversion Rate<small class="text-success m-l-sm"><i class="fa fa-caret-up"></i> +0.33%</small></h4>
+                <h2 class="m-t-xs">6.8%</h2>
+            </div>
+            <div class="col-md-3">
+                <h4 class="m-n">Revenue<small class="text-danger m-l-sm"><i class="fa fa-caret-down"></i> -0.12%</small></h4>
+                <h2 class="m-t-xs">$240,066</h2>
+            </div>
+            <div class="col-md-3">
+                <h4 class="m-n">Orders Placed<small class="text-success m-l-sm"><i class="fa fa-caret-up"></i> -0.12%</small></h4>
+                <h2 class="m-t-xs">6,233</h2>
+            </div>
+        </div>
+    </div>
+</div>

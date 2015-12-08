@@ -91,7 +91,8 @@ angular.module('app', [
                 // If it's a parent state, redirect to it's child
                 if (toState.redirectTo) {
                     event.preventDefault();
-                    var params = _.extend(toParams, $location.search());
+                    var params = toParams;
+                    if (!_.isEmpty(fromParams)) _.extend(toParams, $location.search());
                     $state.go(toState.redirectTo, params);
                     return;
                 }
