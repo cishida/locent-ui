@@ -40,18 +40,20 @@
     }
 }
 
-.no-data {
-    width: 500px;
-    max-width: 90%;
-    margin: 40px auto;
-    p {
-        margin: 0 auto 10px;
-        max-width: 300px;
-    }
+.chart-wrapper {
+    position: relative;
+    height: 150px;
 }
 
-.chart-wrapper {
-    height: 150px;
+.no-data {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    top: 40%;
+    opacity: 0.5;
+    p {
+        max-width: 300px;
+    }
 }
 
 .popup-overlay,
@@ -364,12 +366,15 @@
             text-transform: uppercase;
             font-size: small;
             border-bottom: 2px solid transparent;
+            letter-spacing: 1px;
+            color: #656565;
             &:hover {
                 border-color: grey;
             }
         }
         &.active {
             a {
+                color: @brand-primary;
                 border-bottom: 2px solid @brand-primary;
             }
         }

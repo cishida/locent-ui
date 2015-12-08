@@ -8,6 +8,7 @@ angular.module('app', [
         'ngStorage',
         'restangular',
         'toaster',
+        'chart.js',
         'ui.bootstrap',
         'ui.paging',
         'ui.directives',
@@ -117,6 +118,30 @@ angular.module('app', [
             $scope.logout = function() {
                 Auth.logout();
                 $state.go('access.login');
+            }
+
+            // Graph Options
+            var fontFamily = '"Lato", Helvetica, Arial, sans-serif';
+            $scope.graphOptions = {
+                scaleBeginAtZero: true,
+                scaleShowVerticalLines: false,
+                scaleShowLabels: false,
+                responsive: true,
+                maintainAspectRatio: false,
+                bezierCurve: false,
+                tooltipFontFamily: fontFamily,
+                scaleFontFamily: fontFamily,
+                pointDotRadius: 5,
+                pointDotStrokeWidth: 2,
+                colours: ['#2cc36b', '#E74C3C'],
+                multiTooltipTemplate: function(label) {
+                    return label.datasetLabel + ': ' + "N" + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                },
+                tooltipTitleFontFamily: fontFamily,
+                tooltipTitleFontStyle: "normal",
+                tooltipCornerRadius: 3,
+                tooltipXPadding: 10,
+                tooltipYPadding: 10,
             }
         }
     ]);

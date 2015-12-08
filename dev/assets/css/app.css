@@ -220,6 +220,9 @@ input[type="checkbox"] {
 .list-group.no-border .list-group-item {
   border-width: 1px 0;
 }
+.list-group.no-border .list-group-item:last-child {
+  border-bottom: 0;
+}
 .list-group.no-bg .list-group-item {
   background-color: transparent;
 }
@@ -366,6 +369,7 @@ a.list-group-item.hover {
 }
 .panel {
   border-radius: 2px;
+  border-color: #ECECEC;
 }
 .panel .accordion-toggle {
   font-size: 14px;
@@ -3730,17 +3734,19 @@ a.text-black:hover {
 .table-info small i {
   font-size: 10px;
 }
+.chart-wrapper {
+  position: relative;
+  height: 150px;
+}
 .no-data {
-  width: 500px;
-  max-width: 90%;
-  margin: 40px auto;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 40%;
+  opacity: 0.5;
 }
 .no-data p {
-  margin: 0 auto 10px;
   max-width: 300px;
-}
-.chart-wrapper {
-  height: 150px;
 }
 .popup-overlay,
 .popup-close {
@@ -4005,10 +4011,13 @@ a.text-black:hover {
   text-transform: uppercase;
   font-size: small;
   border-bottom: 2px solid transparent;
+  letter-spacing: 1px;
+  color: #656565;
 }
 .navigation li a:hover {
   border-color: grey;
 }
 .navigation li.active a {
+  color: #3676C8;
   border-bottom: 2px solid #3676C8;
 }

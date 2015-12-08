@@ -272,6 +272,9 @@ input[type="checkbox"] {
     &.no-border {
         .list-group-item {
             border-width: 1px 0;
+            &:last-child {
+                border-bottom: 0;
+            }
         }
     }
     &.no-bg {
@@ -480,6 +483,7 @@ input[type="checkbox"] {
 
 .panel {
     border-radius: @panel-border-radius;
+    border-color: #ECECEC;
     .accordion-toggle {
         font-size: 14px;
         display: block;
