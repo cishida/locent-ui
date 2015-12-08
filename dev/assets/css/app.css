@@ -4021,3 +4021,17 @@ a.text-black:hover {
   color: #3676C8;
   border-bottom: 2px solid #3676C8;
 }
+.tabs li {
+  float: left;
+  list-style: none;
+  width: 10%;
+  font-size: small;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #656565;
+  display: block;
+  cursor: pointer;
+}
+.tabs li.active {
+  color: #3676C8;
+}
