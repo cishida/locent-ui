@@ -11,6 +11,14 @@ angular.module('app.keyword', ['ui.router'])
             url: '/analytics',
             templateUrl: 'modules/keyword/analytics.html',
             controller: 'KeywordAnalyticsCtrl'
+        }).state('app.keyword.messages', {
+            url: '/messages',
+            templateUrl: 'modules/keyword/messages.html',
+            controller: 'KeywordMessagesCtrl'
+        }).state('app.keyword.options', {
+            url: '/options',
+            templateUrl: 'modules/keyword/options.html',
+            controller: 'KeywordOptionsCtrl'
         })
     }
 ])
@@ -23,3 +31,7 @@ angular.module('app.keyword', ['ui.router'])
         [0, 0, 0, 0, 0, 0, 0]
     ];
 }])
+
+.controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+
+.controller('KeywordOptionsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
