@@ -336,7 +336,6 @@
             max-width: 100%;
         }
     }
-
     .dropdown-menu {
         li {
             line-height: 1;
@@ -351,27 +350,28 @@
     }
 }
 
-.navigation{
-  height: 60px;
-  line-height: 50px;
-  padding-left: 20%;
-  padding-right: 20%;
-  margin-top: 20px;
-
-  li{
-    width: 25%;
+.navigation {
     height: 60px;
-    float: left;
-    list-style: none;
-    text-align: center;
-    text-transform: uppercase;
-    font-size: small !important;
-    &:hover{
-      border-bottom: 2px solid grey;
+    line-height: 58px;
+    li {
+        float: left;
+        list-style: none;
+        width: 25%;
+        a {
+            display: block;
+            height: 60px;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: small;
+            border-bottom: 2px solid transparent;
+            &:hover {
+                border-color: grey;
+            }
+        }
+        &.active {
+            a {
+                border-bottom: 2px solid @brand-primary;
+            }
+        }
     }
-  }
-}
-
-.active{
-  border-bottom: 2px solid grey !important;
 }
