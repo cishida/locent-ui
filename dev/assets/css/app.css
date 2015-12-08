@@ -4035,3 +4035,6 @@ a.text-black:hover {
 .tabs li.active {
   color: #3676C8;
 }
+.grey {
+  color: grey;
+}
