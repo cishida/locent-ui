@@ -1,19 +1,19 @@
 <div class="wrapper-md">
-    <div class="row">
-        <div class="tabs col-md-12 m-t-md">
-           <ul class="container font-futura m-l-n p-r">
-             <li ng-repeat="tab in tabs"
-                 ng-class="{active:isActiveTab(tab.url)}"
-                 ng-click="onClickTab(tab)">{{tab.title}}
-              </li>
-          </ul>
-        </div>
+      <div class="tabs col-md-2 m-t-md">
+         <ul class="wrapper-lg font-futura">
+           <li class="m-b-sm" ng-repeat="tab in tabs"
+               ng-class="{active:isActiveTab(tab.url)}"
+               ng-click="onClickTab(tab)">{{tab.title}}
+            </li>
+        </ul>
+      </div>
 
         <div id="mainView">
             <div ng-include="currentTab"></div>
         </div>
 
         <script type="text/ng-template" id="one.tpl.html">
+            <div class="col-md-10">
               <div class="col-md-12">
                   <div class="panel wrapper">
                      <div class="col-md-12">
@@ -77,9 +77,10 @@
                       </div>
                   </div>
               </div>
+            </div>
         </script>
         <script type="text/ng-template" id="two.tpl.html">
-              <div class="col-md-12">
+              <div class="col-md-9">
                  <div class="panel clearfix">
                      <ul class="list-group">
                         <li class="list-group-item">Opt-in message <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
@@ -94,7 +95,7 @@
              </div>
         </script>
         <script type="text/ng-template" id="three.tpl.html">
-              <div class="col-md-12">
+              <div class="col-md-9">
                  <div class="panel clearfix">
                      <ul class="list-group">
                         <li class="list-group-item"><i class="glyphicon glyphicon-shopping-cart icon m-r-sm"></i>Matt Clark <small class="pull-right font-sm">12s</small></li>
@@ -108,5 +109,4 @@
                  </div>
              </div>
         </script>
-    </div>
 </div>
