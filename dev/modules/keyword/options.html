@@ -11,7 +11,7 @@
 </div>
 </div>
 
-<div class="panel wrapper popup-overlay animated fadeIn">
+<div class="panel wrapper popup-overlay animated fadeIn" ng-show="open">
 	<div class="wrapper">
 		<span class="panel-header clickable col-md-12" ng-click="open = !open">
 			<i class="glyphicon glyphicon-chevron-left icon m-r-sm"></i>
@@ -26,7 +26,11 @@
 			<li class="clickable b-black r-3x pull-left m-sm list-group-item w-xs text-xxxs" ng-click="AddLastName()">Last Name</li>
 			<li class="clickable b-black r-3x pull-left m-sm list-group-item w-xs text-xxxs">Product Title</li>
 			<span class="input-group-btn">
-	        	<button class="btn btn-success m-t-sm" type="button">Update Template</button>
+	        	<button class="btn btn-success m-t-sm" type="button" ng-click="updateTemplate()" ng-disabled="load">
+	        		<span ng-show="!load">Update Template </span>
+	        		<span ng-show="load">Updating Template <i class="fa fa-spinner fa-spin"></i></span>
+	        	</button>
+
 	        </span>
 		</div>
 		<div class="col-md-6">

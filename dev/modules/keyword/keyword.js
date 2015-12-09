@@ -19,6 +19,10 @@ angular.module('app.keyword', ['ui.router'])
             url: '/options',
             templateUrl: 'modules/keyword/options.html',
             controller: 'KeywordOptionsCtrl'
+        }).state('app.keyword.campaigns', {
+            url: '/campaigns',
+            templateUrl: 'modules/keyword/campaigns.html',
+            controller: 'KeywordCampaignsCtrl'
         })
     }
 ])
@@ -33,6 +37,7 @@ angular.module('app.keyword', ['ui.router'])
 }])
 
 .controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+.controller('KeywordCampaignsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
 
 .controller('KeywordOptionsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
     
@@ -47,5 +52,9 @@ angular.module('app.keyword', ['ui.router'])
     }
     $scope.AddLastName = function() {
         $scope.preview = $scope.lastName + '' + $scope.mock;
+    }
+
+    $scope.updateTemplate = function() {
+        $scope.load = true;
     }
 }])
