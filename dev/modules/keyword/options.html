@@ -11,12 +11,25 @@
 </div>
 </div>
 
-<div class="panel wrapper popup-overlay animated fadeIn" ng-show="open">
+<div class="panel wrapper popup-overlay animated fadeIn">
 	<div class="wrapper">
-		<span class="panel-header clickable" ng-click="open = !open">
+		<span class="panel-header clickable col-md-12" ng-click="open = !open">
 			<i class="glyphicon glyphicon-chevron-left icon m-r-sm"></i>
 			Back
 		</span>
+		<div class="col-md-6">
+			<h4 class="m-t-lg font-thin">Message</h4>
+			<textarea class="form-control" ng-model="preview" rows="7">
+				Hello Opemipo Aikomo, We received your order and we assure you that we working on fixing this problem.
+			</textarea>
+			<span class="input-group-btn">
+	        	<button class="btn btn-success m-t-lg" type="button">Update Template</button>
+	        </span>
+		</div>
+		<div class="col-md-6">
+			<h4 class="m-t-lg font-thin">Preview</h4>
+			<p>{{preview}}</p>
+		</div>
 	</div>
 </div>
 
