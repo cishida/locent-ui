@@ -24,6 +24,7 @@ angular.module('app', [
         'app.keyword',
         'app.clearcart',
         'app.safetext',
+        'app.settings',
         'app.dashboard'
     ])
     .constant('DEFAULTS', {
