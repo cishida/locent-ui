@@ -35,5 +35,17 @@ angular.module('app.keyword', ['ui.router'])
 .controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
 
 .controller('KeywordOptionsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
-    $scope.preview = "Hello Opemipo Aikomo, We received your order and we assure you that we working on fixing this problem.";
+    
+    $scope.mock = "Hello, We received your order and we assure you that we working on fixing this problem."; 
+    $scope.preview = $scope.mock;
+    $scope.firstName = "Opemipo";
+    $scope.lastName = "Aikomo";
+    $scope.productTitle = "Macbook Pro Retina";
+
+    $scope.AddFirstName = function() {
+        $scope.preview = $scope.firstName + '' + $scope.mock;
+    }
+    $scope.AddLastName = function() {
+        $scope.preview = $scope.lastName + '' + $scope.mock;
+    }
 }])
