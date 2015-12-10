@@ -1,0 +1,36 @@
+<div class="panel" style="overflow: hidden">
+    <div class="row wrapper">
+        <div class="clearfix padder-lg">
+            <h4 class="pull-left m-b-none">{{logs.length}} Logs</h4>
+            <div class="pull-right">
+                <input type="text" class="form-control" placeholder="Search for an order">
+            </div>
+        </div>
+        <hr>
+        <div class="clearfix padder-lg">
+                <span class="col-md-3 font-bold">Customer Name</span>
+                <span class="col-md-3 font-bold">Order Item(s)</span>
+                <span class="col-md-3 font-bold">Time</span>
+                <span class="col-md-2 font-bold">Status</span>
+                <span class="col-md-1 font-bold"></span>
+        </div>
+        <hr>
+        <div class="padder">
+            <ul class="list-group bottom-border no-radius">
+                <li class="list-group-item" ng-repeat="log in logs">
+                    <span class="col-md-3">
+                        <a class="pull-left">
+                            <avatar class="m-r-md" name="{{log.customerName}}"></avatar>
+                        </a>
+                        {{log.customerName}}
+                        <p class="text-muted">07012341829</p>
+                    </span>
+                    <span class="col-md-3">{{log.orderItem}}</span>
+                    <span class="col-md-3">{{log.time}}<p class="text-muted">12:00pm</p></span>
+                    <span class="col-md-2"><p ng-class="{'font-danger': log.status == 'failed'}">{{log.status}}</p></span>
+                    <span class="col-md-1"><i class="fa fa-refresh clickable" ng-show="log.status == 'failed'">retry</i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
