@@ -15,23 +15,72 @@ angular.module('app.clearcart', ['ui.router'])
             url: '/messages',
             templateUrl: 'modules/clearcart/messages.html',
             controller: 'ClearcartMessagesCtrl'
-        }).state('app.clearcart.options', {
-            url: '/options',
-            templateUrl: 'modules/clearcart/options.html',
-            controller: 'ClearcartOptionsCtrl'
+        }).state('app.clearcart.customers', {
+            url: '/customers',
+            templateUrl: 'modules/clearcart/customers.html',
+            controller: 'ClearcartCustomersCtrl'
+        }).state('app.clearcart.logs', {
+            url: '/logs',
+            templateUrl: 'modules/clearcart/logs.html',
+            controller: 'ClearcartLogsCtrl'
         })
     }
 ])
 
-.controller('ClearcartCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
-    
-}])
+.controller('ClearcartCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
 .controller('ClearcartAnalyticsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
     $scope.labels = ["11/9", "11/10", "11/11", "11/12", "11/13", "11/14", "Today"];
     $scope.data = [
         [0, 0, 0, 0, 0, 0, 0]
     ];
 }])
-.controller('ClearcartMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+.controller('ClearcartMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+       $scope.options = [{
+        title: 'Opt-in message',
+        message: 'Hi [first_name], you left [product_title] in your cart and the price is changing soon. Text PAY to order it now!'
+    }, {
+        title: 'Welcome message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Opt-in Refusal message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Transactional message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Confirmation message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Cancellation message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }]
 
-.controller('ClearcartOptionsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParam) {}])
+    $scope.sample = {
+        first_name: "Jean",
+        last_name: "Clark",
+        email: "jean@clark.com",
+        product_title: "Sony Alpha a6000 Mirrorless Camera",
+        product_price: "$10.00",
+        product_description: "A brand-new, unused, unworn and undamaged item in the original packaging with the original tags attached"
+    }
+
+    $scope.add = function(key) {
+        $scope.selected.message += "[" + key + "]"
+    }
+
+    $scope.preview = function(message) {
+        message += " Ordinary msg&data rates may apply. Reply HELP for help. Reply STOP to unsubscribe.";
+        return message.replace(/\[(.+?)\]/g, function($0, $1) {
+            return $scope.sample[$1] || ""
+        })
+    }
+}])
+
+.controller('ClearcartCustomersCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParam) {
+    $scope.names = ["Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson"]
+}])
+.controller('ClearcartLogsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+
+
+
+

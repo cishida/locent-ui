@@ -19,10 +19,10 @@ angular.module('app.keyword', ['ui.router'])
             url: '/messages',
             templateUrl: 'modules/keyword/messages.html',
             controller: 'KeywordMessagesCtrl'
-        }).state('app.keyword.campaigns', {
-            url: '/campaigns',
-            templateUrl: 'modules/keyword/campaigns.html',
-            controller: 'KeywordCampaignsCtrl'
+        }).state('app.keyword.orders', {
+            url: '/orders',
+            templateUrl: 'modules/keyword/orders.html',
+            controller: 'KeywordOrdersCtrl'
         })
     }
 ])
@@ -40,7 +40,33 @@ angular.module('app.keyword', ['ui.router'])
     $scope.names = ["Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson"]
 }])
 
-.controller('KeywordCampaignsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+.controller('KeywordOrdersCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+        $scope.orders = [{
+        customerName: 'Opemipo Aikomo',
+        orderItem: 'Macbook Pro, Macbook Air',
+        time: 'January 8th 2015',
+    }, {
+        customerName: 'Oladele Tobi',
+        orderItem: 'Ipad mini',
+        time: 'January 8th 2015',
+    }, {
+        customerName: 'Ore Oyelaja',
+        orderItem: 'Mac',
+        time: 'January 8th 2015',
+    }, {
+        customerName: 'Shope Johnson',
+        orderItem: 'Iphone 6s',
+        time: 'January 8th 2015',
+    }, {
+        customerName: 'Philip Badu',
+        orderItem: 'Beats by Dre',
+        time: 'January 8th 2015',
+    }, {
+        customerName: 'Herbert Macualay',
+        orderItem: 'Zashadu Bag',
+        time: 'January 8th 2015',
+    }]
+}])
 
 .controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
 

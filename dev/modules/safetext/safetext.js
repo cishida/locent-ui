@@ -15,10 +15,14 @@ angular.module('app.safetext', ['ui.router'])
             url: '/messages',
             templateUrl: 'modules/safetext/messages.html',
             controller: 'SafetextMessagesCtrl'
-        }).state('app.safetext.options', {
-            url: '/options',
-            templateUrl: 'modules/safetext/options.html',
-            controller: 'SafetextOptionsCtrl'
+        }).state('app.safetext.customers', {
+            url: '/customers',
+            templateUrl: 'modules/safetext/customers.html',
+            controller: 'SafetextCustomersCtrl'
+        }).state('app.safetext.logs', {
+            url: '/logs',
+            templateUrl: 'modules/safetext/logs.html',
+            controller: 'SafetextLogsCtrl'
         })
     }
 ])
@@ -32,6 +36,52 @@ angular.module('app.safetext', ['ui.router'])
         [0, 0, 0, 0, 0, 0, 0]
     ];
 }])
-.controller('SafetextMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+.controller('SafetextMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+     $scope.options = [{
+        title: 'Opt-in message',
+        message: 'Hi [first_name], you left [product_title] in your cart and the price is changing soon. Text PAY to order it now!'
+    }, {
+        title: 'Welcome message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Opt-in Refusal message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Transactional message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Confirmation message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }, {
+        title: 'Cancellation message',
+        message: 'Hello, [first_name] and the rest of the message here.'
+    }]
 
-.controller('SafetextOptionsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParam) {}])
+    $scope.sample = {
+        first_name: "Jean",
+        last_name: "Clark",
+        email: "jean@clark.com",
+        product_title: "Sony Alpha a6000 Mirrorless Camera",
+        product_price: "$10.00",
+        product_description: "A brand-new, unused, unworn and undamaged item in the original packaging with the original tags attached"
+    }
+
+    $scope.add = function(key) {
+        $scope.selected.message += "[" + key + "]"
+    }
+
+    $scope.preview = function(message) {
+        message += " Ordinary msg&data rates may apply. Reply HELP for help. Reply STOP to unsubscribe.";
+        return message.replace(/\[(.+?)\]/g, function($0, $1) {
+            return $scope.sample[$1] || ""
+        })
+    }
+}])
+
+.controller('SafetextCustomersCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParam) {
+    $scope.names = ["Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson"]
+}])
+.controller('SafetextLogsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+
+
+

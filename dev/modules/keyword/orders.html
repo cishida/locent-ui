@@ -1,0 +1,25 @@
+<div class="panel" style="overflow: hidden">
+    <div class="row wrapper">
+        <div class="clearfix padder-lg">
+                <span class="col-md-4 font-bold">Customer Name</span>
+                <span class="col-md-4 font-bold">Order Item(s)</span>
+                <span class="col-md-4 font-bold">Time</span>
+        </div>
+        <hr>
+        <div class="padder">
+            <ul class="list-group bottom-border no-radius">
+                <li class="list-group-item" ng-repeat="order in orders">
+                    <span class="col-md-4">
+                        <a class="pull-left">
+                            <avatar class="m-r-md" name="{{order.customerName}}"></avatar>
+                        </a>
+                        {{order.customerName}}
+                        <p class="text-muted">07012341829</p>
+                    </span>
+                    <span class="col-md-4">{{order.orderItem}}</span>
+                    <span class="col-md-4">{{order.time}}<p class="text-muted">12:00pm</p></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
