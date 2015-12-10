@@ -49,25 +49,31 @@
             </a>
         </li>
         <li ui-sref-active="active">
+            <a ui-sref="app.orders">
+                <i class="fa fa-inbox m-r-sm"></i>
+                <span>Orders</span>
+            </a>
+        </li>
+        <li ui-sref-active="active">
             <a ui-sref="app.keyword">
                 <i class="glyphicon glyphicon-stats icon m-r-sm"></i>
-                <span>Keyword checkout</span>
+                <span>Keyword</span>
             </a>
         </li>
         <li ui-sref-active="active">
             <a ui-sref="app.clearcart">
                 <i class="glyphicon glyphicon-stats icon m-r-sm"></i>
-                <span>Clearcart checkout</span>
+                <span>Clearcart</span>
             </a>
         </li>
         <li ui-sref-active="active">
             <a ui-sref="app.safetext">
                 <i class="glyphicon glyphicon-stats icon m-r-sm"></i>
-                <span>Safetext checkout</span>
+                <span>Safetext</span>
             </a>
         </li>
     </ul>
 </div>
 <div class="content-wrap">
-    <div class="container" ui-view></div>
+    <div class="container fade-in-up" ui-view></div>
 </div>

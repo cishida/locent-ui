@@ -74,4 +74,22 @@ angular.module('ui.directives', [])
                 };
             }
         };
-    }]);
+    }]).directive('focus', ['$timeout',
+        function($timeout) {
+            //directive to focus on on input
+            return {
+                scope: {
+                    trigger: '@focus'
+                },
+                link: function(scope, element) {
+                    scope.$watch('trigger', function(value) {
+                        if (value === "true") {
+                            $timeout(function() {
+                                element[0].focus();
+                            });
+                        }
+                    });
+                }
+            };
+        }
+    ]);

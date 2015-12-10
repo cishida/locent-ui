@@ -358,7 +358,7 @@
     li {
         float: left;
         list-style: none;
-        width: 25%;
+        width: 20%;
         a {
             display: block;
             height: 60px;
@@ -393,14 +393,16 @@
         line-height: 45px;
         margin: 0;
         border-bottom: solid 1px whitesmoke;
-        color: #656565;
-        display: block;
-        cursor: pointer;
+        > a {
+            color: #656565;
+            display: block;
+            cursor: pointer;
+            &.active {
+                color: @brand-primary;
+            }
+        }
         &:last-child {
             border-bottom: 0;
-        }
-        &.active {
-            color: @brand-primary;
         }
     }
 }

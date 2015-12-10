@@ -1,94 +1,35 @@
-<div class="panel">
+<div class="panel" style="overflow: hidden">
     <div class="row wrapper">
         <div class="clearfix padder-lg">
-            <h4 class="pull-left m-b-none">{{names.length}} Customers</h4>
-            <div class="pull-right">
-                <input type="text" class="form-control" placeholder="Search for a customer">
-            </div>
+            <h4 class="pull-left m-b-none">
+                <span class="inline clickable fadeIn" ng-class="{animated: open}" ng-show="open" ng-click="open = false"><i class="fa fa-angle-left icon m-r-sm"></i> Back</span>
+                <span class="fadeIn" ng-class="{animated: !open}" ng-hide="open">Configure Transactional Messages</span>
+            </h4>
         </div>
         <hr>
-        <div class="clearfix wrapper">
-            <div class="list-group bottom-border no-radius">
-                <div class="col-md-4 m-b" ng-repeat="name in names track by $index">
-                    <div class="list-group-item clickable" ng-click="$parent.popupOpen = true; $parent.selected = name">
-                        <a class="pull-left thumb-sm avatar m-r">
-                            <img src="assets/img/avatar.png" class="img-circle">
-                            <i class="on b-white bottom"></i>
-                        </a>
-                        <div class="clear">
-                            <div><a href="">{{name}}</a></div>
-                            <small class="text-muted">07012341829</small>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center text-muted">
-                No more customers
-            </div>
+        <div class="padder" ng-hide="open" ng-class="{'animated fadeInLeft': open == false}">
+            <ul class="list-group bottom-border no-radius">
+                <li class="list-group-item clickable" ng-repeat="option in options" ng-click="$parent.open = true; $parent.selected = option;">
+                    <p class="m-t-sm"><b>{{option.title}}</b> - <span class="text-muted">{{option.message}}</span></p>
+                </li>
+            </ul>
         </div>
-    </div>
-</div>
-<div class="chat-popup animated" ng-show="popupOpen" ng-class="{'fadeIn': popupOpen, 'fadeOut': closingPopup}">
-    <div class="popup-overlay" ng-click="closePopup(); popupOpen = false;"></div>
-    <div class="popup-content animated" ng-class="{'fadeInRight': popupOpen, 'fadeOutRight': closingPopup}">
-        <div class="chat-header b-b">
-            <div class="pull-left"><a class="padder-md inline" ng-click="closePopup(); popupOpen = false;"><i class="fa fa-angle-left"></i></a></div>
-            <div uib-dropdown class="dropdown pull-left">
-                <b class="clickable" id="user-profile" uib-dropdown-toggle>{{selected}} <i class="fa fa-angle-down m-l-xs"></i></b>
-                <div class="user-profile uib-dropdown-menu" aria-labelledby="user-profile">
-                    <div class="wrapper b-b">
-                        <a class="pull-left thumb-sm avatar m-r">
-                            <img src="assets/img/avatar.png" class="img-circle">
-                            <i class="on b-white bottom"></i>
-                        </a>
-                        <div class="clear">
-                            <div><a href="">{{selected}}</a></div>
-                            <small class="text-muted">07012341829</small>
-                        </div>
-                    </div>
-                    <div class="padder m-t-md b-b">
-                        <div class="font-bold">Subscribed To</div>
-                        <div class="row">
-                            <ul class="list-group no-border no-radius m-t-sm m-b-none">
-                                <li class="list-group-item">Keyword Checkout</li>
-                                <li class="list-group-item">Clearcart Checkout</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="wrapper">
-                        <a class="text-primary" href=""><i class="icon-bag m-r-xs"></i> 50 orders</a>
-                    </div>
+        <div class="col-xs-12 m-b-md" ng-show="open" ng-class="{'animated fadeInRight': open == true}">
+            <div class="col-md-6">
+                <h4 class="font-bold">{{selected.title}}</h4>
+                <textarea class="form-control input-md m-t-md" ng-model="selected.message" rows="5"></textarea>
+                <div class="controls m-t-sm">
+                    <button class="btn btn-default btn-sm m-b-xs m-r-xs" ng-repeat="(key, value) in sample" ng-click="add(key)">{{key}}</button>
                 </div>
             </div>
-            <div class="pull-right"><a class="padder-md inline text-primary"><i class="fa fa-file-zip-o m-r-xs"></i> Export</a></div>
-        </div>
-        <div class="chat-content">
-            <div class="wrapper">
-                <div class="panel m-r-md m-b-md b-a bg-light lt">
-                    <div class="pos-rlt wrapper-sm">
-                        <span class="arrow arrow-light left"></span>
-                        <span class="text-xs">ebay :</span>
-                        <span class="text-muted m-l-sm pull-right text-sm">1h ago </span>
-                    </div>
-                    <div class="padder m-b-md">
-                        <div>Hi {{selected.split(' ')[0]}}, you left Sony Alpha a6000 Mirrorless Camera in your cart and the price is changing soon. Text PAY to order it now!</div>
-                    </div>
-                </div>
-                <div class="panel m-l-md m-b-md b-a">
-                    <div class="pos-rlt wrapper-sm">
-                        <span class="arrow arrow right"></span>
-                        <a href="">{{selected.split(' ')[0]}} :</a>
-                        <span class="text-muted m-l-sm pull-right"> 1h ago</span>
-                    </div>
-                    <div class="padder m-b-md">
-                        <div>PAY</div>
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <h4 class="font-bold">Preview</h4>
+                <p>{{preview(selected.message)}}</p>
+                <hr>
+                <p class="text-muted">Sample Data: <span ng-repeat="(key, value) in sample"><b>{{key}} - </b>{{value}}, </span></p>
             </div>
-        </div>
-        <div class="chat-footer">
-            <div class="wrapper">
-                <input type="text" class="form-control">
+            <div class="col-md-12">
+                <button ng-click="open = false" class="btn btn-primary m-t-sm" type="button">Update Template</button>
             </div>
         </div>
     </div>

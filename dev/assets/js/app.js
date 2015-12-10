@@ -73,14 +73,15 @@ angular.module('app', [
             })
         }
     ])
-    .run(['$rootScope', '$location', '$state', '$stateParams', 'DEFAULTS', 'toaster', 'Auth',
-        function($rootScope, $location, $state, $stateParams, DEFAULTS, toaster, Auth) {
+    .run(['$rootScope', '$location', '$state', '$stateParams', 'DEFAULTS', 'toaster', 'Auth', '$timeout',
+        function($rootScope, $location, $state, $stateParams, DEFAULTS, toaster, Auth, $timeout) {
             $rootScope.$state = $state;
             $rootScope.$stateParams = $stateParams;
             $rootScope.Date = Date;
             $rootScope.DEFAULTS = DEFAULTS;
 
             $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.loadingNextState = true;
                 Auth.authorize(event, toState, toParams);
 
                 // Go home if login
@@ -97,11 +98,12 @@ angular.module('app', [
                     $state.go(toState.redirectTo, params);
                     return;
                 }
-                $rootScope.showLoadingIcon = true;
             });
 
             $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams) {
-                $rootScope.showLoadingIcon = false;
+                $timeout(function() {
+                    $rootScope.loadingNextState = false;
+                }, 300)
                 $rootScope.$state.activeParams = _.some(_.values($stateParams));
             })
         }

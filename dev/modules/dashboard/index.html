@@ -4,7 +4,6 @@
         </div>
         <div class="col-md-6">
             <div class="panel wrapper">
-                
                 <div class="col-md-3 pull-right">
                     <select name="account" class="form-control m-b">
                         <option value="option 1">Today</option>
@@ -15,12 +14,11 @@
                         <option value="option 4">Last 6 months</option>
                     </select>
                 </div>
-                <h4 class="pull-right text-success"><i class="fa fa-caret-up m-r-xs"></i> 3.24%</h4>
-                <h4 class="m-n">Revenue</h4>
+                <h4 class="m-n">Revenue <small class="text-success m-l-xs"><i class="fa fa-caret-up"></i> 3.24%</small></h4>
                 <h3 class="m-t-xs text-success">$122,944</h3>
                 <hr>
                 <div class="chart-wrapper m-b-md">
-                    <div class="no-data" ng-show="!data.length">No data available</div>
+                    <!-- <div class="no-data" ng-show="!data.length">No data available</div> -->
                     <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="graphOptions">
                     </canvas>
                 </div>
@@ -38,8 +36,7 @@
                         <option value="option 4">Last 6 months</option>
                     </select>
                 </div>
-                <span class="pull-right text-danger"><i class="fa fa-caret-down m-r-xs"></i> 1.09%</span>
-                <h4 class="m-n">Messages Sent</h4>
+                <h4 class="m-n">Messages Sent <small class="text-danger m-l-xs"><i class="fa fa-caret-down"></i> 1.09%</small></h4>
                 <h3 class="m-t-xs text-info">30,115</h3>
                 <hr>
                 <div class="chart-wrapper m-b-md">

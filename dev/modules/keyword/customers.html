@@ -1,0 +1,105 @@
+<div class="panel">
+    <div class="row wrapper">
+        <div class="clearfix padder-lg">
+            <h4 class="pull-left m-b-none">{{names.length}} Customers</h4>
+            <div class="pull-right">
+                <input type="text" class="form-control" placeholder="Search for a customer">
+            </div>
+        </div>
+        <hr>
+        <div class="clearfix wrapper">
+            <div class="list-group bottom-border no-radius">
+                <div class="col-md-4 m-b" ng-repeat="name in names track by $index">
+                    <div class="list-group-item clickable" ng-click="$parent.popupOpen = true; $parent.selected = name">
+                        <a class="pull-left thumb-sm avatar m-r">
+                            <img src="assets/img/avatar.png" class="img-circle">
+                            <i class="on b-white bottom"></i>
+                        </a>
+                        <div class="clear">
+                            <div>{{name}}</div>
+                            <small class="text-muted">07012341829</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center text-muted">
+                No more customers
+            </div>
+        </div>
+    </div>
+</div>
+<div class="chat-popup animated" ng-show="popupOpen" ng-class="{'fadeIn': popupOpen, 'fadeOut': closingPopup}">
+    <div class="popup-overlay" ng-click="closePopup(); popupOpen = false;"></div>
+    <div class="popup-content animated" ng-class="{'fadeInRight': popupOpen, 'fadeOutRight': closingPopup}">
+        <div class="chat-header b-b">
+            <div class="pull-left"><a class="padder-md inline" ng-click="closePopup(); popupOpen = false;"><i class="fa fa-angle-left"></i></a></div>
+            <div uib-dropdown class="dropdown pull-left">
+                <b class="clickable" id="user-profile" uib-dropdown-toggle>{{selected}} <i class="fa fa-angle-down m-l-xs"></i></b>
+                <div class="user-profile uib-dropdown-menu" aria-labelledby="user-profile">
+                    <div class="wrapper b-b">
+                        <a class="pull-left thumb-sm avatar m-r">
+                            <img src="assets/img/avatar.png" class="img-circle">
+                            <i class="on b-white bottom"></i>
+                        </a>
+                        <div class="clear">
+                            <div><a href="">{{selected}}</a></div>
+                            <small class="text-muted">07012341829</small>
+                        </div>
+                    </div>
+                    <div class="padder m-t-md b-b">
+                        <div class="font-bold">Subscribed To</div>
+                        <div class="row">
+                            <ul class="list-group no-border no-radius m-t-sm m-b-none">
+                                <li class="list-group-item">Keyword Checkout</li>
+                                <li class="list-group-item">Clearcart Checkout</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="wrapper">
+                        <a class="text-primary" href=""><i class="icon-bag m-r-xs"></i> 50 orders</a>
+                    </div>
+                </div>
+            </div>
+            <div class="pull-right"><a class="padder-md inline text-primary"><i class="fa fa-file-zip-o m-r-xs"></i> Export</a></div>
+        </div>
+        <div class="chat-content">
+            <div class="wrapper">
+                <div class="panel m-r-md m-b-md b-a bg-light lt">
+                    <div class="pos-rlt wrapper-sm">
+                        <span class="arrow arrow-light left"></span>
+                        <span class="text-xs">ebay :</span>
+                        <span class="text-muted m-l-sm pull-right text-sm">1h ago </span>
+                    </div>
+                    <div class="padder m-b-md">
+                        <div>Hi {{selected.split(' ')[0]}}, you left Sony Alpha a6000 Mirrorless Camera in your cart and the price is changing soon. Text PAY to order it now!</div>
+                    </div>
+                </div>
+                <div class="panel m-l-md m-b-md b-a">
+                    <div class="pos-rlt wrapper-sm">
+                        <span class="arrow arrow right"></span>
+                        <a href="">{{selected.split(' ')[0]}} :</a>
+                        <span class="text-muted m-l-sm pull-right"> 1h ago</span>
+                    </div>
+                    <div class="padder m-b-md">
+                        <div>PAY</div>
+                    </div>
+                </div>
+                <div class="panel m-r-md m-b-md b-a bg-light lt">
+                    <div class="pos-rlt wrapper-sm">
+                        <span class="arrow arrow-light left"></span>
+                        <span class="text-xs">ebay :</span>
+                        <span class="text-muted m-l-sm pull-right text-sm">1h ago </span>
+                    </div>
+                    <div class="padder m-b-md">
+                        <div>Thank you, {{selected.split(' ')[0]}}. Your order has been placed. The item will be delivered to your address soon.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-footer">
+            <div class="wrapper">
+                <input type="text" class="form-control" placeholder="Send a direct message to {{selected}}" focus="{{popupOpen}}">
+            </div>
+        </div>
+    </div>
+</div>
