@@ -36,12 +36,15 @@ angular.module('app.keyword', ['ui.router'])
     ];
 }])
 
-.controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+.controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+    $scope.names = ["Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson"]
+}])
+
 .controller('KeywordCampaignsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
 
 .controller('KeywordOptionsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
-    
-    $scope.mock = "Hello, We received your order and we assure you that we working on fixing this problem."; 
+
+    $scope.mock = "Hello, We received your order and we assure you that we working on fixing this problem.";
     $scope.preview = $scope.mock;
     $scope.firstName = "Opemipo";
     $scope.lastName = "Aikomo";

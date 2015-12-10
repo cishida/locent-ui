@@ -277,6 +277,11 @@ input[type="checkbox"] {
             }
         }
     }
+    &.bottom-border {
+        .list-group-item {
+            border-width: 0 0 1px;
+        }
+    }
     &.no-bg {
         .list-group-item {
             background-color: transparent;
@@ -343,6 +348,9 @@ input[type="checkbox"] {
         & + .badge {
             margin-right: 5px;
         }
+    }
+    &.clickable:hover {
+        border-color: @brand-primary;
     }
 }
 

@@ -223,6 +223,9 @@ input[type="checkbox"] {
 .list-group.no-border .list-group-item:last-child {
   border-bottom: 0;
 }
+.list-group.bottom-border .list-group-item {
+  border-width: 0 0 1px;
+}
 .list-group.no-bg .list-group-item {
   background-color: transparent;
 }
@@ -282,6 +285,9 @@ a.list-group-item.hover {
 }
 .list-group-item > .fa-chevron-right + .badge {
   margin-right: 5px;
+}
+.list-group-item.clickable:hover {
+  border-color: #3676C8;
 }
 .nav-pills.no-radius > li > a {
   border-radius: 0;
@@ -2827,6 +2833,9 @@ a.text-black:hover {
 .text-xxs {
   text-indent: -9999px;
 }
+.text-xxxs {
+  font-size: 0.5em;
+}
 .text-ellipsis {
   display: block;
   white-space: nowrap;
@@ -4041,4 +4050,45 @@ a.text-black:hover {
 }
 .tabs li.active {
   color: #3676C8;
+}
+.chat-popup .popup-overlay {
+  position: fixed;
+}
+.chat-popup .popup-content {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  z-index: 1000;
+  width: 400px;
+  border-left: solid 1px #eee;
+  background: white;
+}
+.chat-popup .chat-header,
+.chat-popup .chat-footer {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: white;
+  z-index: 2;
+}
+.chat-popup .chat-header {
+  top: 0;
+}
+.chat-popup .chat-header > div {
+  line-height: 65px;
+}
+.chat-popup .chat-footer {
+  bottom: 0;
+}
+.chat-popup .chat-content {
+  height: 100%;
+  padding-top: 65px;
+  padding-bottom: 65px;
+  overflow: auto;
+}
+.chat-popup .user-profile {
+  line-height: 1.2em;
+  width: 200px;
 }

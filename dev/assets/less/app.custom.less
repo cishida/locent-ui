@@ -404,3 +404,47 @@
         }
     }
 }
+
+.chat-popup {
+    .popup-overlay {
+        position: fixed;
+    }
+    .popup-content {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        z-index: 1000;
+        width: 400px;
+        border-left: solid 1px #eee;
+        background: white
+    }
+    .chat-header,
+    .chat-footer {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 65px;
+        background: white;
+        z-index: 2;
+    }
+    .chat-header {
+        top: 0;
+        > div {
+            line-height: 65px;
+        }
+    }
+    .chat-footer {
+        bottom: 0;
+    }
+    .chat-content {
+        height: 100%;
+        padding-top: 65px;
+        padding-bottom: 65px;
+        overflow: auto;
+    }
+    .user-profile {
+        line-height: 1.2em;
+        width: 200px;
+    }
+}

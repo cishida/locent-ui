@@ -106,8 +106,8 @@ angular.module('app', [
             })
         }
     ])
-    .controller('AppCtrl', ['$scope', '$localStorage', '$window', '$state', '$stateParams', '$rootScope', 'Auth',
-        function($scope, $localStorage, $window, $state, $stateParams, $rootScope, Auth) {
+    .controller('AppCtrl', ['$scope', '$localStorage', '$window', '$state', '$stateParams', '$rootScope', 'Auth', '$timeout',
+        function($scope, $localStorage, $window, $state, $stateParams, $rootScope, Auth, $timeout) {
 
             // Config
             $scope.app = {
@@ -144,6 +144,14 @@ angular.module('app', [
                 tooltipCornerRadius: 3,
                 tooltipXPadding: 10,
                 tooltipYPadding: 10,
+            }
+
+            // Close transition
+            $scope.closePopup = function(callback) {
+                $scope.closingPopup = true;
+                $timeout(function() {
+                    $scope.closingPopup = false;
+                }, 300)
             }
         }
     ]);
