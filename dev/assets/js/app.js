@@ -32,8 +32,8 @@ angular.module('app', [
         'baseURL': settings.baseApiUrl,
         'liveURL': settings.liveApiUrl
     })
-    .config(['$urlRouterProvider', '$httpProvider', 'RestangularProvider', '$locationProvider', '$stateProvider', 'ngDialogProvider', 'gravatarServiceProvider',
-        function($urlRouterProvider, $httpProvider, RestangularProvider, $locationProvider, $stateProvider, ngDialogProvider, gravatarServiceProvider) {
+    .config(['$urlRouterProvider', '$httpProvider', 'RestangularProvider', '$locationProvider', '$stateProvider', 'ngDialogProvider', 'gravatarServiceProvider', 'ChartJsProvider',
+        function($urlRouterProvider, $httpProvider, RestangularProvider, $locationProvider, $stateProvider, ngDialogProvider, gravatarServiceProvider, ChartJsProvider) {
 
             $urlRouterProvider
                 .when('', ['$state', function($state) {
@@ -62,6 +62,29 @@ angular.module('app', [
                 } else {
                     return data;
                 };
+            });
+
+            var fontFamily = '"Lato", Helvetica, Arial, sans-serif';
+            ChartJsProvider.setOptions({
+                scaleBeginAtZero: true,
+                scaleShowVerticalLines: false,
+                scaleShowLabels: false,
+                responsive: true,
+                maintainAspectRatio: false,
+                bezierCurve: false,
+                tooltipFontFamily: fontFamily,
+                scaleFontFamily: fontFamily,
+                pointDotRadius: 5,
+                pointDotStrokeWidth: 2,
+                colours: ['#2D91D9'],
+                multiTooltipTemplate: function(label) {
+                    return label.datasetLabel + ': ' + "N" + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+                },
+                tooltipTitleFontFamily: fontFamily,
+                tooltipTitleFontStyle: "normal",
+                tooltipCornerRadius: 3,
+                tooltipXPadding: 10,
+                tooltipYPadding: 10,
             });
 
             $stateProvider.state('app', {
@@ -125,28 +148,7 @@ angular.module('app', [
             }
 
             // Graph Options
-            var fontFamily = '"Lato", Helvetica, Arial, sans-serif';
-            $scope.graphOptions = {
-                scaleBeginAtZero: true,
-                scaleShowVerticalLines: false,
-                scaleShowLabels: false,
-                responsive: true,
-                maintainAspectRatio: false,
-                bezierCurve: false,
-                tooltipFontFamily: fontFamily,
-                scaleFontFamily: fontFamily,
-                pointDotRadius: 5,
-                pointDotStrokeWidth: 2,
-                colours: ['#2cc36b', '#E74C3C'],
-                multiTooltipTemplate: function(label) {
-                    return label.datasetLabel + ': ' + "N" + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                },
-                tooltipTitleFontFamily: fontFamily,
-                tooltipTitleFontStyle: "normal",
-                tooltipCornerRadius: 3,
-                tooltipXPadding: 10,
-                tooltipYPadding: 10,
-            }
+
 
             // Close transition
             $scope.closePopup = function(callback) {
