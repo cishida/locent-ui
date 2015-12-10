@@ -3,9 +3,9 @@
         "message": "Logged successfully",
         "data": {
             "user": {
-                "firstname": "Shope",
-                "lastname": "Johnson ",
-                "email": "shopejohnson@gmail.com",
+                "firstname": "Lanre",
+                "lastname": "Oyedotun ",
+                "email": "lanre.oyedotun@deliveryscience.co",
                 "password": "password",
                 "exp": "2238879600000",
                 "organisation": {
@@ -13,7 +13,7 @@
                 },
                 "verified": false,
                 "role": {
-                    "name": "Enterprise Architect"
+                    "name": "Great Teammate"
                 }
             },
             "token": "JHGJHGJHGJHGHUYIUY87686hvnchgfHGFFHFHGJHGJH",
