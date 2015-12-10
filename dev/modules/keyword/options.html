@@ -1,11 +1,42 @@
-<div class="panel clearfix">
+<div class="panel wrapper popup clearfix m-t-none m-l-n-xxl">
     <ul class="list-group">
-        <li class="list-group-item">Opt-in message <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
-        <li class="list-group-item">Welcome message <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
-        <li class="list-group-item">Customer refused message <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
-        <li class="list-group-item">Specific product to buy <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
-        <li class="list-group-item">Invalid keyword <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
-        <li class="list-group-item">Confirmation message <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
-        <li class="list-group-item">Discounts message <small class="grey m-l-sm">Hello Opemipo, the rest of the message goes here.</small></li>
+        <li class="list-group-item clickable" ng-click="open = !open">Opt-in message </li>
+        <li class="list-group-item clickable" ng-click="open = !open">Welcome message </li>
+        <li class="list-group-item clickable" ng-click="open = !open">Customer refused message </li>
+        <li class="list-group-item clickable" ng-click="open = !open">Specific product to buy </li>
+        <li class="list-group-item clickable" ng-click="open = !open">Invalid keyword </li>
+        <li class="list-group-item clickable" ng-click="open = !open">Confirmation message </li>
+        <li class="list-group-item clickable" ng-click="open = !open">Discounts message </li>
     </ul>
 </div>
+</div>
+
+<div class="panel wrapper popup-overlay animated fadeIn" ng-show="open">
+	<div class="wrapper">
+		<span class="panel-header clickable col-md-12" ng-click="open = !open">
+			<i class="glyphicon glyphicon-chevron-left icon m-r-sm"></i>
+			Back
+		</span>
+		<div class="col-md-6">
+			<h4 class="m-t-lg font-thin">Message</h4>
+			<textarea class="form-control" ng-model="preview" rows="7">
+				
+			</textarea>
+			<li class="clickable b-black r-3x pull-left m-sm m-l-xs list-group-item w-xs text-xxxs" ng-click="AddFirstName()">First Name</li>
+			<li class="clickable b-black r-3x pull-left m-sm list-group-item w-xs text-xxxs" ng-click="AddLastName()">Last Name</li>
+			<li class="clickable b-black r-3x pull-left m-sm list-group-item w-xs text-xxxs">Product Title</li>
+			<span class="input-group-btn">
+	        	<button class="btn btn-success m-t-sm" type="button" ng-click="updateTemplate()" ng-disabled="load">
+	        		<span ng-show="!load">Update Template </span>
+	        		<span ng-show="load">Updating Template <i class="fa fa-spinner fa-spin"></i></span>
+	        	</button>
+
+	        </span>
+		</div>
+		<div class="col-md-6">
+			<h4 class="m-t-lg font-thin">Preview</h4>
+			<p>{{preview}}</p>
+		</div>
+	</div>
+</div>
+
