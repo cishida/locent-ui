@@ -38,6 +38,22 @@ angular.module('ui.directives', [])
                 }
             }
         };
+    }).directive('avatar', function() {
+        return {
+            restrict: 'E',
+            replace: true,
+            template: '<span class="user-avatar" ng-style="style">{{initials}}</span>',
+            link: function($scope, element, attrs, controller) {
+                var colors = ['#3676C8', '#3676C8', '#2c3e50', '#27ae60', '#16a085']
+                var name = attrs["name"] || "--";
+                if (name.length > 1) _name = name.split(" ")[0].charAt(0) + name.split(" ")[1].charAt(0);
+                else _name = name.substring(0, 2);
+                $scope.initials = _name;
+                $scope.style = {
+                    'background-color': _.sample(colors)
+                }
+            }
+        };
     }).directive('ngLoading', [function() {
         //directive to show loading state
         return {

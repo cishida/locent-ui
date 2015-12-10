@@ -3332,6 +3332,18 @@ a.text-black:hover {
 .avatar.thumb-xs i {
   margin: 0;
 }
+.user-avatar {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: whitesmoke;
+  overflow: hidden;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-size: 14px;
+}
 .w-1x {
   width: 1em;
 }
