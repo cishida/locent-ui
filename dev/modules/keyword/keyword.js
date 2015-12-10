@@ -32,7 +32,7 @@ angular.module('app.keyword', ['ui.router'])
 .controller('KeywordAnalyticsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
     $scope.labels = ["11/9", "11/10", "11/11", "11/12", "11/13", "11/14", "Today"];
     $scope.data = [
-        [0, 0, 0, 0, 0, 0, 0]
+        [50, 60, 50, 60, 30, 30, 90]
     ];
 }])
 

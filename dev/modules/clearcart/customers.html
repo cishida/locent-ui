@@ -12,8 +12,9 @@
                 <div class="col-md-4 m-b" ng-repeat="name in names track by $index">
                     <div class="list-group-item clickable" ng-click="$parent.popupOpen = true; $parent.selected = name">
                         <a class="pull-left thumb-sm avatar m-r">
-                            <img src="assets/img/avatar.png" class="img-circle">
-                            <i class="on b-white bottom"></i>
+                            <a class="pull-left">
+                            <avatar class="m-r-md" name="{{name}}"></avatar>
+                        </a>
                         </a>
                         <div class="clear">
                             <div>{{name}}</div>

@@ -29,7 +29,7 @@
     </div>
     <hr>
     <div class="chart-wrapper m-b-md">
-        <div class="no-data">No data available</div>
+        <div class="no-data" ng-show="!data">No data available</div>
         <canvas id="line" class="chart chart-line" chart-data="data" chart-labels="labels" chart-legend="false" chart-series="series" chart-options="graphOptions">
         </canvas>
     </div>

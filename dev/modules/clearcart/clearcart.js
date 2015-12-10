@@ -31,7 +31,7 @@ angular.module('app.clearcart', ['ui.router'])
 .controller('ClearcartAnalyticsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
     $scope.labels = ["11/9", "11/10", "11/11", "11/12", "11/13", "11/14", "Today"];
     $scope.data = [
-        [0, 0, 0, 0, 0, 0, 0]
+        [50, 60, 50, 60, 30, 30, 90]
     ];
 }])
 .controller('ClearcartMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
@@ -79,7 +79,39 @@ angular.module('app.clearcart', ['ui.router'])
 .controller('ClearcartCustomersCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParam) {
     $scope.names = ["Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson"]
 }])
-.controller('ClearcartLogsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {}])
+.controller('ClearcartLogsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+    $scope.logs = [{
+        customerName: 'Opemipo Aikomo',
+        orderItem: 'Macbook Pro, Macbook Air',
+        time: 'January 8th 2015',
+        status: 'success',
+    }, {
+        customerName: 'Oladele Tobi',
+        orderItem: 'Ipad mini',
+        time: 'January 8th 2015',
+        status: 'success',
+    }, {
+        customerName: 'Ore Oyelaja',
+        orderItem: 'Mac',
+        time: 'January 8th 2015',
+        status: 'failed',
+    }, {
+        customerName: 'Shope Johnson',
+        orderItem: 'Iphone 6s',
+        time: 'January 8th 2015',
+        status: 'success',
+    }, {
+        customerName: 'Philip Badu',
+        orderItem: 'Beats by Dre',
+        time: 'January 8th 2015',
+        status: 'success',
+    }, {
+        customerName: 'Herbert Macualay',
+        orderItem: 'Zashadu Bag',
+        time: 'January 8th 2015',
+        status: 'success',
+    }]
+}])
 
 
 
