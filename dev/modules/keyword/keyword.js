@@ -36,68 +36,35 @@ angular.module('app.keyword', ['ui.router'])
     ];
 }])
 
-.controller('KeywordCustomersCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
-    $scope.names = ["Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson", "Matt Clark", "Richard Ford", "David Chang", "Olga Schwartz", "Jamie Lynch", "Jean Roberson"]
+.controller('KeywordCustomersCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams, MockAPI) {
+    MockAPI.all('customers').getList().then(function(response){
+        $scope.customers = response;
+    }, function(error){
+           
+        });
 }])
 
-.controller('KeywordOrdersCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
-        $scope.orders = [{
-        customerName: 'Opemipo Aikomo',
-        orderItem: 'Macbook Pro, Macbook Air',
-        time: 'January 8th 2015',
-    }, {
-        customerName: 'Oladele Tobi',
-        orderItem: 'Ipad mini',
-        time: 'January 8th 2015',
-    }, {
-        customerName: 'Ore Oyelaja',
-        orderItem: 'Mac',
-        time: 'January 8th 2015',
-    }, {
-        customerName: 'Shope Johnson',
-        orderItem: 'Iphone 6s',
-        time: 'January 8th 2015',
-    }, {
-        customerName: 'Philip Badu',
-        orderItem: 'Beats by Dre',
-        time: 'January 8th 2015',
-    }, {
-        customerName: 'Herbert Macualay',
-        orderItem: 'Zashadu Bag',
-        time: 'January 8th 2015',
-    }]
+.controller('KeywordOrdersCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams, MockAPI) {
+     MockAPI.all('orders').getList().then(function(response){
+        $scope.orders = response;
+    }, function(error){
+           
+        });
 }])
 
-.controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+.controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', 'Auth', 'MockAPI', function($state, $scope, $stateParams, Auth, MockAPI) {
 
-    $scope.options = [{
-        title: 'Opt-in message',
-        message: 'Hi [first_name], you left [product_title] in your cart and the price is changing soon. Text PAY to order it now!'
-    }, {
-        title: 'Welcome message',
-        message: 'Hello, [first_name] and the rest of the message here.'
-    }, {
-        title: 'Opt-in Refusal message',
-        message: 'Hello, [first_name] and the rest of the message here.'
-    }, {
-        title: 'Transactional message',
-        message: 'Hello, [first_name] and the rest of the message here.'
-    }, {
-        title: 'Confirmation message',
-        message: 'Hello, [first_name] and the rest of the message here.'
-    }, {
-        title: 'Cancellation message',
-        message: 'Hello, [first_name] and the rest of the message here.'
-    }]
+    MockAPI.all('options').getList().then(function(response){
+        $scope.options = response;
+    }, function(error){
+           
+        });
 
-    $scope.sample = {
-        first_name: "Jean",
-        last_name: "Clark",
-        email: "jean@clark.com",
-        product_title: "Sony Alpha a6000 Mirrorless Camera",
-        product_price: "$10.00",
-        product_description: "A brand-new, unused, unworn and undamaged item in the original packaging with the original tags attached"
-    }
+    MockAPI.all('sample_data').getList().then(function(response){
+        $scope.sample = response;
+    }, function(error){
+           
+        });
 
     $scope.add = function(key) {
         $scope.selected.message += "[" + key + "]"
