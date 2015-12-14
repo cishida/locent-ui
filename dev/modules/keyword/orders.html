@@ -7,12 +7,12 @@
             </div>
         </div>
         <hr>
-        <div class="clearfix padder-lg">
-                <span class="col-md-4 font-bold">Customer Name</span>
-                <span class="col-md-4 font-bold">Order Item(s)</span>
-                <span class="col-md-4 font-bold">Time</span>
+        <div class="clearfix padder-lg hidden-mobile">
+            <span class="col-md-4 font-bold">Customer Name</span>
+            <span class="col-md-4 font-bold">Order Item(s)</span>
+            <span class="col-md-4 font-bold">Time</span>
         </div>
-        <hr>
+        <hr class="hidden-mobile">
         <div class="padder">
             <ul class="list-group bottom-border no-radius">
                 <li class="list-group-item" ng-repeat="order in orders">
@@ -21,10 +21,10 @@
                             <avatar class="m-r-md" name="{{order.customerName}}"></avatar>
                         </a>
                         {{order.customerName}}
-                        <p class="text-muted">07012341829</p>
+                        <span class="text-muted">07012341829</span>
                     </span>
-                    <span class="col-md-4">{{order.orderItem}}</span>
-                    <span class="col-md-4">{{order.time}}<p class="text-muted">12:00pm</p></span>
+                    <span class="col-md-4 col-xs-12 no-padder-xs">{{order.orderItem}}</span>
+                    <span class="col-md-4 col-xs-12 no-padder-xs">{{order.time}}<p class="text-muted">12:00pm</p></span>
                 </li>
             </ul>
         </div>

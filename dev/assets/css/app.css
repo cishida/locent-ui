@@ -3529,6 +3529,16 @@ a.text-black:hover {
     margin: 0 !important;
   }
 }
+@media all and (min-width: 640px) {
+  .visible-mobile {
+    display: none;
+  }
+}
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .hidden-mobile {
+    display: none;
+  }
+}
 /*phone*/
 @media (max-width: 767px) {
   .w-auto-xs {
@@ -4020,7 +4030,6 @@ a.text-black:hover {
   .header .logo {
     width: auto;
     height: 40px;
-    margin: 10px 0;
   }
   .header .logo img {
     height: 40px;
@@ -4143,35 +4152,40 @@ a.text-black:hover {
   display: block;
   cursor: pointer;
 }
-.tabs li > a.active {
+.tabs li.active > a {
   color: #3676C8;
 }
 .tabs li:last-child {
   border-bottom: 0;
 }
-@media all and (min-width: 320px) and (max-width: 640px) {
+@media all and (max-width: 767px) {
   .tabs {
-    margin: 10px 0;
+    margin: 20px 0;
   }
   .tabs ul {
     padding: 0;
     margin: 0;
   }
   .tabs ul li {
-    font-size: 12px;
+    font-size: 18px;
     height: 20px;
     line-height: 20px;
     margin: 0 10px;
     border-bottom: 0;
+    display: none;
+  }
+  .tabs ul li.active {
     display: inline-block;
   }
 }
 .inner-content {
   margin-top: 30px;
+  padding: 0;
 }
 @media all and (min-width: 320px) and (max-width: 640px) {
   .inner-content {
     margin-top: 0;
+    padding: 0 10px;
   }
 }
 .chat-popup .popup-overlay {
