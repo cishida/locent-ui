@@ -23,6 +23,10 @@ angular.module('app.keyword', ['ui.router'])
             url: '/orders',
             templateUrl: 'modules/keyword/orders.html',
             controller: 'KeywordOrdersCtrl'
+        }).state('app.keyword.products', {
+            url: '/products',
+            templateUrl: 'modules/keyword/products.html',
+            controller: 'KeywordProductsCtrl'
         })
     }
 ])
@@ -76,4 +80,8 @@ angular.module('app.keyword', ['ui.router'])
             return $scope.sample[$1] || ""
         })
     }
+}])
+
+.controller('KeywordProductsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+    
 }])
