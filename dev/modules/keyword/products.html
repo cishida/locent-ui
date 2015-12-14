@@ -1,0 +1,32 @@
+<div class="panel" style="overflow: hidden">
+    <div class="row wrapper">
+        <div class="clearfix padder-lg">
+            <button class="btn btn-success" ui-sref="app.keyword.create-product">Create New Product</button>
+            <div class="pull-right">
+                <input type="text" class="form-control" placeholder="Search for an order">
+            </div>
+        </div>
+        <hr>
+        <div class="clearfix padder-lg">
+                <span class="col-md-3 font-bold">Product Name</span>
+                <span class="col-md-3 font-bold">Description</span>
+                <span class="col-md-3 font-bold">Keyword</span>
+                <span class="col-md-2 font-bold">Price</span>
+                <span class="col-md-1 font-bold"></span>
+        </div>
+        <hr>
+        <div class="padder">
+            <ul class="list-group bottom-border no-radius">
+                <li class="list-group-item" ng-repeat="product in products">
+                    <span class="col-md-3">
+                        {{product.productName}}
+                    </span>
+                    <span class="col-md-3">{{product.description}}</span>
+                    <span class="col-md-3">{{product.keyword}}</span>
+                    <span class="col-md-2">{{product.price}}</span>
+                    <span class="col-md-1 clickable"><i class="fa fa-plus"></i> <i class="fa fa-trash m-l-sm"></i></span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -27,6 +27,10 @@ angular.module('app.keyword', ['ui.router'])
             url: '/products',
             templateUrl: 'modules/keyword/products.html',
             controller: 'KeywordProductsCtrl'
+        }).state('app.keyword.create-product', {
+            url: '/create-product',
+            templateUrl: 'modules/keyword/create-product.html',
+            controller: 'KeywordCreateProductsCtrl'
         })
     }
 ])
@@ -82,6 +86,17 @@ angular.module('app.keyword', ['ui.router'])
     }
 }])
 
-.controller('KeywordProductsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
-    
+.controller('KeywordProductsCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams, MockAPI) {
+    MockAPI.all('products').getList().then(function(response){
+        $scope.products = response;
+    },  function(error){
+
+        });
+}])
+
+.controller('KeywordCreateProductsCtrl', ['$state', '$scope', '$stateParams', function($state, $scope, $stateParams) {
+    $scope.load = true;
+    $scope.create = function (){
+
+    }
 }])
