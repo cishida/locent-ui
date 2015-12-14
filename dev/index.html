@@ -61,7 +61,7 @@
     <!--JS_SCRIPTS END-->
 </head>
 
-<body ng-controller="AppCtrl">
+<body ng-controller="AppCtrl" ng-class="{'sidebar-menu-active': showSidebar}">
     <div class="loader" ng-show="loadingNextState">
         <div class="dot dot1"></div>
         <div class="dot dot2"></div>

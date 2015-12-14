@@ -1,15 +1,11 @@
 <div class="header">
     <div class="container">
         <div class="pull-left">
-            <div class="logo">
-                <img class="logo" src="assets/img/logo_small.png" alt="">
+            <div class="logo" ng-click="toggleSidebar()">
+                <img class="hidden-xs" src="assets/img/logo_small.png" alt="Locent Logo">
+                <span class="visible-xs"><i class="fa fa-bars"></i></span>
+                <img class="visible-xs" src="assets/img/logo_small_xs.png" alt="Locent Logo">
             </div>
-            <!--             <ul class="header-menu">
-                <li><a ui-sref="app.transactions" ui-sref-active="active"><i class="fa fa-filter"></i>Transactions</a></li>
-                <li><a ui-sref="app.customers" ui-sref-active="active"><i class="fa fa-user"></i>Customers</a></li>
-                <li><a ui-sref="app.subscriptions" ui-sref-active="active"><i class="fa fa-cubes"></i>Subscriptions</a></li>
-                <li><a ui-sref="app.settings" ui-sref-active="active"><i class="fa fa-lock"></i>Settings</a></li>
-            </ul> -->
         </div>
         <div class="pull-right">
             <div class="logged-in">
@@ -32,16 +28,15 @@
                         </li>
                     </ul>
                 </div>
-                <!--                 <div class="profile">
-                    <p class="username font-bold text-ellipsis">{{currentSession.user.first_name}} {{currentSession.user.last_name}}</p>
-                    <p class="company text-ellipsis">{{currentSession.account.business_name}}</p>
-                </div> -->
             </div>
         </div>
     </div>
 </div>
 <div class="navigation b-t b-b">
     <ul class="container font-futura">
+        <li class="sidebar-logo visible-xs">
+            <img src="assets/img/logo_small.png" alt="Locent Logo">
+        </li>
         <li ui-sref-active="active">
             <a ui-sref="app.dashboard">
                 <i class="glyphicon glyphicon-dashboard icon m-r-sm"></i>
@@ -75,5 +70,5 @@
     </ul>
 </div>
 <div class="content-wrap">
-    <div class="container fade-in-up" ui-view></div>
+    <div class="container fade-in-up no-padder-xs" ui-view></div>
 </div>

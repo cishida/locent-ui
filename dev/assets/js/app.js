@@ -105,6 +105,7 @@ angular.module('app', [
             $rootScope.DEFAULTS = DEFAULTS;
 
             $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams) {
+                $rootScope.showSidebar = false;
                 $rootScope.loadingNextState = true;
                 Auth.authorize(event, toState, toParams);
 
@@ -148,8 +149,10 @@ angular.module('app', [
                 $state.go('access.login');
             }
 
-            // Graph Options
-
+            // Sidebar toggle
+            $scope.toggleSidebar = function() {
+                $rootScope.showSidebar = !$rootScope.showSidebar;
+            }
 
             // Close transition
             $scope.closePopup = function(callback) {
