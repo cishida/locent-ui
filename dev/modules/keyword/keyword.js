@@ -87,6 +87,8 @@ angular.module('app.keyword', ['ui.router'])
 }])
 
 .controller('KeywordProductsCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams, MockAPI) {
+    $scope.load = true;
+
     MockAPI.all('products').getList().then(function(response){
         $scope.products = response;
     },  function(error){
