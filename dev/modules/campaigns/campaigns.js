@@ -5,11 +5,16 @@ angular.module('app.campaigns', ['ui.router'])
         $stateProvider.state('app.campaigns', {
             url: '/campaigns',
             templateUrl: 'modules/campaigns/index.html',
+<<<<<<< Updated upstream
             controller: 'CampaignsCtrl'
         }).state('app.create', {
             url: '/create-campaign',
             templateUrl: 'modules/campaigns/create.html',
             controller: 'CampaignCreateCtrl'
+=======
+            controller: 'CampaignsCtrl',
+            redirectTo: 'app.keyword.analytics'
+>>>>>>> Stashed changes
         })
     }
 ])
