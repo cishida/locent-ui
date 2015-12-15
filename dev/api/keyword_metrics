@@ -13,5 +13,11 @@
 		"revenue": "20000",
 		"orders": "1000",
 		"status": "active"
+	},{
+		"name": "Summer Hamper Bundle",
+		"conversion_rate": "3.5",
+		"revenue": "20000",
+		"orders": "1000",
+		"status": "active"
 	}]
 }

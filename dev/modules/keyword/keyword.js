@@ -19,7 +19,12 @@ angular.module('app.keyword', ['ui.router'])
         }).state('app.keyword.customers', {
             url: '/customers',
             templateUrl: 'modules/keyword/customers.html',
-            controller: 'KeywordCustomersCtrl'
+            controller: 'KeywordCustomersCtrl',
+            resolve: {
+                customers: ['MockAPI', function(MockAPI) {
+                    return MockAPI.all('customers').getList();
+                }]
+            }
         }).state('app.keyword.messages', {
             url: '/messages',
             templateUrl: 'modules/keyword/messages.html',
@@ -50,12 +55,8 @@ angular.module('app.keyword', ['ui.router'])
     $scope.metrics = metrics;
 }])
 
-.controller('KeywordCustomersCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams, MockAPI) {
-    MockAPI.all('customers').getList().then(function(response) {
-        $scope.customers = response;
-    }, function(error) {
-
-    });
+.controller('KeywordCustomersCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', 'customers', function($state, $scope, $stateParams, MockAPI, customers) {
+    $scope.customers = customers;
 }])
 
 .controller('KeywordOrdersCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams, MockAPI) {
