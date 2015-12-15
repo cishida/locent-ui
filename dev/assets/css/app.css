@@ -2913,6 +2913,11 @@ a.text-black:hover {
   padding-top: 7px;
   padding-bottom: 7px;
 }
+@media all and (min-width: 320px) and (max-width: 640px) {
+  .pad-top-xs {
+    padding-top: 10px;
+  }
+}
 .no-padder {
   padding: 0 !important;
 }

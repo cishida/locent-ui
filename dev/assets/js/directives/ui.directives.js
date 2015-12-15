@@ -26,6 +26,9 @@ angular.module('ui.directives', [])
                     case "active":
                         $scope.label_class += " btn-success"
                         break;
+                    case "success":
+                        $scope.label_class += " btn-success"
+                        break;
                     case "inactive":
                         $scope.label_class += " btn-danger"
                         break;

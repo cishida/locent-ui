@@ -1,0 +1,17 @@
+{
+	"messages_sent": "15332",
+	"conversion_rate": "6.8",
+	"revenue": "240066",
+	"orders": "6233",
+	"messages_sent_increase": "3.24",
+	"conversion_rate_increase": "0.33",
+	"revenue_increase": "-0.12",
+	"orders_increase": "0.12",
+	"products": [{
+		"name": "Winter Christmas Bundle",
+		"conversion_rate": "3.5",
+		"revenue": "20000",
+		"orders": "1000",
+		"status": "active"
+	}]
+}

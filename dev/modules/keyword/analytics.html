@@ -1,6 +1,6 @@
 <div class="panel wrapper">
     <div class="col-md-12">
-        <div class="col-md-4 m-l-n">
+        <div class="col-md-3 m-l-n">
             <select name="account" class="form-control m-b">
                 <option value="option 1">Messages sent</option>
                 <option value="option 2">Conversion Rate</option>
@@ -18,14 +18,6 @@
                 <option value="option 4">Last 6 months</option>
             </select>
         </div>
-        <div class="col-md-2 pull-right hidden-xs">
-            <select name="account" class="form-control m-b  ">
-                <option value="option 1">Hourly</option>
-                <option value="option 2">Daily</option>
-                <option value="option 3">Weekly</option>
-                <option value="option 4">Monthly</option>
-            </select>
-        </div>
     </div>
     <hr>
     <div class="chart-wrapper m-b-md">
@@ -37,21 +29,47 @@
 <div class="panel clearfix">
     <div class="col-md-12">
         <div class="row wrapper-lg">
-            <div class="col-md-3">
-                <h4 class="m-n">Messages Sent <small class="text-success m-l-sm"><i class="fa fa-caret-up m-r-xs"></i>3.24%</small></h4>
-                <h2 class="m-t-xs">15,332</h2>
+            <div class="col-md-3 pad-top-xs">
+                <h4 class="m-n">Messages Sent <small class="text-success m-l-sm"><i class="fa fa-caret-up m-r-xs"></i>{{metrics.messages_sent_increase}}%</small></h4>
+                <h2 class="m-t-xs">{{metrics.messages_sent | number}}</h2>
             </div>
-            <div class="col-md-3">
-                <h4 class="m-n">Conversion <small class="text-success m-l-sm"><i class="fa fa-caret-up m-r-xs"></i>0.33%</small></h4>
-                <h2 class="m-t-xs">6.8%</h2>
+            <div class="col-md-3 pad-top-xs">
+                <h4 class="m-n">Conversion <small class="text-success m-l-sm"><i class="fa fa-caret-up m-r-xs"></i>{{metrics.conversion_rate_increase}}%</small></h4>
+                <h2 class="m-t-xs">{{metrics.conversion_rate}}%</h2>
             </div>
-            <div class="col-md-3">
-                <h4 class="m-n">Revenue<small class="text-danger m-l-sm"><i class="fa fa-caret-down m-r-xs"></i>0.12%</small></h4>
-                <h2 class="m-t-xs">$240,066</h2>
+            <div class="col-md-3 pad-top-xs">
+                <h4 class="m-n">Revenue<small class="text-danger m-l-sm"><i class="fa fa-caret-down m-r-xs"></i>{{metrics.revenue_increase}}%</small></h4>
+                <h2 class="m-t-xs">{{metrics.revenue | currency}}</h2>
             </div>
-            <div class="col-md-3">
-                <h4 class="m-n">Orders Placed<small class="text-success m-l-sm"><i class="fa fa-caret-up m-r-xs"></i>0.12%</small></h4>
-                <h2 class="m-t-xs">6,233</h2>
+            <div class="col-md-3 pad-top-xs">
+                <h4 class="m-n">Orders Placed<small class="text-success m-l-sm"><i class="fa fa-caret-up m-r-xs"></i>{{metrics.orders_increase}}%</small></h4>
+                <h2 class="m-t-xs">{{metrics.orders | number}}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="panel clearfix">
+    <div class="row wrapper">
+        <div class="clearfix padder-lg hidden-mobile">
+            <div class="col-md-4 font-bold">Product Name</div>
+            <div class="col-md-2 font-bold">Conversion</div>
+            <div class="col-md-2 font-bold">Revenue</div>
+            <div class="col-md-2 font-bold">Orders</div>
+            <div class="col-md-2 font-bold">Status</div>
+        </div>
+        <hr class="hidden-mobile">
+        <div class="padder no-padder-xs">
+            <div class="list-group bottom-border no-radius">
+                <div class="list-group-item" ng-repeat="product in metrics.products">
+                    <div class="col-md-4 col-xs-12">{{product.name}}</div>
+                    <div class="col-md-2 col-xs-12"><b class="visible-mobile">Conversion:</b> {{product.conversion_rate}}%</div>
+                    <div class="col-md-2 col-xs-12"><b class="visible-mobile">Revenue:</b> {{product.revenue | currency}}</div>
+                    <div class="col-md-2 col-xs-12"><b class="visible-mobile">Orders:</b> {{product.orders | number}}</div>
+                    <span class="col-md-2 col-xs-12"><b class="visible-mobile">Status:</b> <badge status="{{product.status}}"></badge></span>
+                </div>
+            </div>
+            <div class="text-center text-muted">
+                No more products
             </div>
         </div>
     </div>
