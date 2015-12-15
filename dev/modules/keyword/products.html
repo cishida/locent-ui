@@ -1,69 +1,65 @@
 <div class="panel" style="overflow: hidden">
     <div class="row wrapper">
-        <div class="clearfix padder-lg">
-            <button class="btn btn-success" ui-sref="app.keyword.create-product">Create New Product</button>
-            <div class="pull-right">
-                <input type="text" class="form-control" placeholder="Search for an order">
+        <div class="clearfix padder-lg no-padder-xs">
+            <h4 class="pull-left m-b-none hidden-mobile">{{products.length}} Products</h4>
+            <div class="pull-right col-xs-12-mobile">
+                <button class="btn btn-success pull-left" ui-sref="app.keyword.create-product"><i class="fa fa-plus m-r-xs"></i> New Product</button>
             </div>
         </div>
         <hr>
-        <div class="clearfix padder-lg">
-                <span class="col-md-3 font-bold">Product Name</span>
-                <span class="col-md-3 font-bold">Description</span>
-                <span class="col-md-3 font-bold">Keyword</span>
-                <span class="col-md-2 font-bold">Price</span>
-                <span class="col-md-1 font-bold"></span>
+        <div class="clearfix padder-lg hidden-mobile">
+            <span class="col-md-3 font-bold">Product Name</span>
+            <span class="col-md-3 font-bold">Description</span>
+            <span class="col-md-3 font-bold">Keyword</span>
+            <span class="col-md-2 font-bold">Price</span>
+            <span class="col-md-1 font-bold"></span>
         </div>
-        <hr>
-        <div class="padder">
+        <hr class="hidden-mobile">
+        <div class="padder no-padder-xs">
             <ul class="list-group bottom-border no-radius">
                 <li class="list-group-item" ng-repeat="product in products">
-                    <span class="col-md-3">
-                        {{product.productName}}
+                    <span class="col-md-3 col-xs-12">
+                        {{product.name}} <span class="visible-xs">{{product.description}}</span>
                     </span>
-                    <span class="col-md-3">{{product.description}}</span>
-                    <span class="col-md-3">{{product.keyword}}</span>
-                    <span class="col-md-2">{{product.price}}</span>
-                    <span class="col-md-1 clickable"><i class="fa fa-plus" ng-click="show = !show"></i> <i class="fa fa-trash m-l-sm"></i></span>
+                    <span class="col-md-3 col-xs-12 hidden-xs">{{product.description}}</span>
+                    <span class="col-md-3 col-xs-6"><span class="visible-mobile">Keyword: </span>{{product.keyword}}</span>
+                    <span class="col-md-2 col-xs-6">{{product.price | currency}}</span>
+                    <span class="col-md-1 clickable hidden-xs"><i class="fa fa-edit"></i></span>
                 </li>
             </ul>
+            <div class="text-center text-muted m-b-md">
+                No more products
+            </div>
         </div>
     </div>
-    
     <div class="popup-overlay" ng-show="show">
         <div class="popup">
             <form name="createProduct">
-
-                    <div class="form-group col-xs-6 m-b-xs">
-                        <label>Product Name</label>
-                        <input type="text" class="form-control" ng-model="product.name" required/>
+                <div class="form-group col-xs-6 m-b-xs">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" ng-model="product.name" required/>
+                </div>
+                <div class="form-group col-xs-6 m-b-xs">
+                    <label>Product Description</label>
+                    <input type="text" class="form-control" ng-model="product.description" required/>
+                </div>
+                <div class="form-group col-xs-6 m-b-xs">
+                    <label>Product Price</label>
+                    <input type="number" class="form-control" ng-model="product.price" required/>
+                </div>
+                <div class="form-group col-xs-6 m-b-xs">
+                    <label>Product Keyword</label>
+                    <input type="text" class="form-control" ng-model="product.keyword" required/>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12 m-t-sm">
+                        <button type="submit" ng-disabled="createProduct.$invalid" ng-click="create()" class="btn btn-primary">
+                            <span ng-show="load">Update Product</span>
+                            <span ng-show="!load"> <i class="fa fa-spinner fa-spin"></i>Updating product...</span>
+                        </button>
                     </div>
-
-                    <div class="form-group col-xs-6 m-b-xs">
-                        <label>Product Description</label>
-                        <input type="text" class="form-control" ng-model="product.description" required/>
-                    </div>
-
-                    <div class="form-group col-xs-6 m-b-xs">
-                        <label>Product Price</label>
-                        <input type="number" class="form-control" ng-model="product.price" required/>
-                    </div>
-
-                    <div class="form-group col-xs-6 m-b-xs">
-                        <label>Product Keyword</label>
-                        <input type="text" class="form-control" ng-model="product.keyword" required/>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12 m-t-sm">
-                          <button type="submit" ng-disabled="createProduct.$invalid" ng-click="create()" class="btn btn-primary">
-                              <span ng-show="load">Update Product</span>
-                              <span ng-show="!load"> <i class="fa fa-spinner fa-spin"></i>Updating product...</span>
-                          </button>
-                        </div>
-                    </div>
-                </form>
+                </div>
+            </form>
         </div>
     </div>
-
 </div>

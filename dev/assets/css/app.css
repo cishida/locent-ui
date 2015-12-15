@@ -792,7 +792,7 @@ pre {
   font-weight: bold;
   border-radius: 2px;
   outline: 0!important;
-  text-transform: uppercase;
+  text-transform: initial;
   line-height: 1.42857143;
 }
 .btn-link {

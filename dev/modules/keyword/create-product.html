@@ -2,41 +2,35 @@
     <div class="row wrapper">
         <div class="clearfix padder-lg">
             <h4 class="pull-left m-b-none">
-                <span class="inline clickable fadeIn col-md-12" ui-sref="app.keyword.products"><i class="fa fa-angle-left icon m-r-sm"></i> Back</span>
-                <!-- <span class="fadeIn col-md-12">Create New Product</span> -->
+                <span class="inline clickable fadeIn col-md-12" ui-sref="app.keyword.products"><i class="fa fa-angle-left icon m-r-sm"></i> Back to all products</span>
             </h4>
         </div>
         <hr>
         <div class="col-xs-12 m-b-md">
-            <div class="panel col-md-6 wrapper">
+            <div class="wrapper no-padder-xs">
                 <form name="createProduct">
-
-                    <div class="form-group col-xs-12 m-b-xs">
+                    <div class="form-group col-xs-12 col-md-6 m-b-sm">
                         <label>Product Name</label>
                         <input type="text" class="form-control" ng-model="product.name" required/>
                     </div>
-
-                    <div class="form-group col-xs-12 m-b-xs">
-                        <label>Product Description</label>
-                        <input type="text" class="form-control" ng-model="product.description" required/>
-                    </div>
-
-                    <div class="form-group col-xs-12 m-b-xs">
+                    <div class="form-group col-xs-12 col-md-6 m-b-sm">
                         <label>Product Price</label>
-                        <input type="number" class="form-control" ng-model="product.price" required/>
+                        <input type="number" class="form-control" ng-model="product.price" currency-mask required/>
                     </div>
-
-                    <div class="form-group col-xs-12 m-b-xs">
+                    <div class="form-group col-xs-12 col-md-6 m-b-sm">
                         <label>Product Keyword</label>
                         <input type="text" class="form-control" ng-model="product.keyword" required/>
                     </div>
-
-                    <div class="form-group">
-                        <div class="col-md-12 m-t-sm">
-                          <button type="submit" ng-disabled="createProduct.$invalid" ng-click="create()" class="btn btn-primary">
-                              <span ng-show="load">Create Product</span>
-                              <span ng-show="!load"> <i class="fa fa-spinner fa-spin"></i>Creating product...</span>
-                          </button>
+                    <div class="form-group col-xs-12 col-md-6 m-b-sm">
+                        <label>Product Description</label>
+                        <input type="text" class="form-control" ng-model="product.description" required/>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <div class="col-md-12 m-t-sm m-b-md text-right">
+                            <button type="submit" ng-disabled="createProduct.$invalid" ng-click="create()" class="btn btn-primary">
+                                <span ng-show="load">Create Product</span>
+                                <span ng-show="!load"> <i class="fa fa-spinner fa-spin"></i>Creating product...</span>
+                            </button>
                         </div>
                     </div>
                 </form>

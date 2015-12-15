@@ -1,23 +1,20 @@
 [
   {
-      "productName": "Sugar",
+      "name": "Sugar",
       "description": "St louis sugar cubes",
       "keyword": "ST",
-      "price": "250",
-      "has_items": "true"
+      "price": "250"
   },
   {
-      "productName": "Milk",
+      "name": "Milk",
       "description": "Hollandia Milk",
       "keyword": "HM",
-      "price": "400",
-      "has_items": "true"
+      "price": "400"
   },
   {
-      "productName": "Cocoa",
+      "name": "Cocoa",
       "description": "Nestle Milo",
       "keyword": "NM",
-      "price": "500",
-      "has_items": "true"
+      "price": "500"
   }
 ]
