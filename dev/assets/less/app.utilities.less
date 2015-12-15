@@ -1077,14 +1077,11 @@
     }
 }
 
-.hidden-mobile {
-    @media @mobile {
+@media @mobile {
+    .hidden-mobile {
         display: none;
     }
-}
-
-.col-xs-12-xs {
-    @media @mobile {
+    .col-xs-12-mobile {
         width: 100%;
         float: left;
         padding: 0 15px;

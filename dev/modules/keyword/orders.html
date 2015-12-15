@@ -1,32 +1,35 @@
 <div class="panel" style="overflow: hidden">
     <div class="row wrapper">
-        <div class="clearfix padder-lg">
-            <h4 class="pull-left m-b-none">{{orders.length}} Orders</h4>
-            <div class="pull-right">
+        <div class="clearfix padder-lg no-padder-xs">
+            <h4 class="pull-left m-b-none hidden-mobile">{{orders.length}} Orders</h4>
+            <div class="pull-right  col-xs-12-mobile">
                 <input type="text" class="form-control" placeholder="Search for an order">
             </div>
         </div>
         <hr>
         <div class="clearfix padder-lg hidden-mobile">
             <span class="col-md-4 font-bold">Customer Name</span>
-            <span class="col-md-4 font-bold">Order Item(s)</span>
+            <span class="col-md-4 font-bold">Product</span>
             <span class="col-md-4 font-bold">Time</span>
         </div>
         <hr class="hidden-mobile">
         <div class="padder">
             <ul class="list-group bottom-border no-radius">
                 <li class="list-group-item" ng-repeat="order in orders">
-                    <span class="col-md-4">
+                    <span class="col-md-4 clearfix no-padder-xs">
                         <a class="pull-left">
-                            <avatar class="m-r-md" name="{{order.customerName}}"></avatar>
+                            <avatar class="m-r-md" name="{{order.customer.first_name}} {{order.customer.last_name}}"></avatar>
                         </a>
-                        {{order.customerName}}
+                        {{order.customer.first_name}} {{order.customer.last_name}} <br>
                         <span class="text-muted">07012341829</span>
                     </span>
-                    <span class="col-md-4 col-xs-12 no-padder-xs">{{order.orderItem}}</span>
-                    <span class="col-md-4 col-xs-12 no-padder-xs">{{order.time}}<p class="text-muted">12:00pm</p></span>
+                    <span class="col-md-4 col-xs-12 no-padder-xs">{{order.product}} <span class="text-muted visible-mobile">/ {{order.time}}</span></span>
+                    <span class="col-md-4 col-xs-12 hidden-mobile">{{order.time}}</span>
                 </li>
             </ul>
+            <div class="text-center text-muted">
+                No more orders
+            </div>
         </div>
     </div>
 </div>
