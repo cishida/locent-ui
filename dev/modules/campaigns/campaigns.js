@@ -6,9 +6,9 @@ angular.module('app.campaigns', ['ui.router'])
             url: '/campaigns',
             templateUrl: 'modules/campaigns/index.html',
             controller: 'CampaignsCtrl'
-        }).state('app.campaigns.create-campaign', {
+        }).state('app.create', {
             url: '/create-campaign',
-            templateUrl: 'modules/campaigns/create-campaign.html',
+            templateUrl: 'modules/campaigns/create.html',
             controller: 'CampaignCreateCtrl'
         })
     }
