@@ -6,11 +6,7 @@ angular.module('app.safetext', ['ui.router'])
             url: '/safetext-checkout',
             templateUrl: 'modules/safetext/index.html',
             controller: 'SafetextCtrl',
-            redirectTo: 'app.safetext.analytics'
-        }).state('app.safetext.analytics', {
-            url: '/analytics',
-            templateUrl: 'modules/safetext/analytics.html',
-            controller: 'SafetextAnalyticsCtrl'
+            redirectTo: 'app.safetext.customers'
         }).state('app.safetext.messages', {
             url: '/messages',
             templateUrl: 'modules/safetext/messages.html',
