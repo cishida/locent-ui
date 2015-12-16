@@ -16,6 +16,10 @@ angular.module('app.campaigns', ['ui.router'])
                     return MockAPI.one('campaigns').get();
                 }]
             }
+        }).state('app.campaigns.create', {
+            url: '/create-campaign',
+            templateUrl: 'modules/campaigns/create.html',
+            controller: 'CampaignsCreateCtrl'
         })
     }    
 ])
@@ -26,4 +30,8 @@ angular.module('app.campaigns', ['ui.router'])
 
 .controller('CampaignsListCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', 'campaigns', function($state, $scope, $stateParams, MockAPI ,campaigns) {
     $scope.campaigns = campaigns;
+}])
+
+.controller('CampaignsCreateCtrl', ['$state', '$scope', '$stateParams', 'MockAPI', function($state, $scope, $stateParams) {
+    
 }])
