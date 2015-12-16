@@ -29,6 +29,11 @@ angular.module('app.keyword', ['ui.router'])
             url: '/messages',
             templateUrl: 'modules/keyword/messages.html',
             controller: 'KeywordMessagesCtrl'
+            controller: 'KeywordCustomersCtrl'
+        }).state('app.keyword.settings', {
+            url: '/settings',
+            templateUrl: 'modules/keyword/settings.html',
+            controller: 'KeywordSettingsCtrl'
         }).state('app.keyword.orders', {
             url: '/orders',
             templateUrl: 'modules/keyword/orders.html',
@@ -73,7 +78,7 @@ angular.module('app.keyword', ['ui.router'])
     $scope.orders = orders;
 }])
 
-.controller('KeywordMessagesCtrl', ['$state', '$scope', '$stateParams', 'Auth', 'MockAPI', function($state, $scope, $stateParams, Auth, MockAPI) {
+.controller('KeywordSettingsCtrl', ['$state', '$scope', '$stateParams', 'Auth', 'MockAPI', function($state, $scope, $stateParams, Auth, MockAPI) {
 
     MockAPI.all('options').getList().then(function(response) {
         $scope.options = response;
