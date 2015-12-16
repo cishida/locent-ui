@@ -1,0 +1,27 @@
+[
+        {
+            "campaignName": "Opemipo Aikomo",
+            "campaignRevenue": "$5000",
+            "campaignConversionRate": "20%"
+        }, {
+            "campaignName": "Oladele Tobi",
+            "campaignRevenue": "$7000",
+            "campaignConversionRate": "20%"
+        }, {
+            "campaignName": "Ore Oyelaja",
+            "campaignRevenue": "$2000",
+            "campaignConversionRate": "20%"
+        }, {
+            "campaignName": "Shope Johnson",
+            "campaignRevenue": "$9000",
+            "campaignConversionRate": "20%"
+        }, {
+            "campaignName": "Philip Badu",
+            "campaignRevenue": "$5800",
+            "campaignConversionRate": "20%"
+        }, {
+            "campaignName": "Herbert Macualay",
+            "campaignRevenue": "$5000",
+            "campaignConversionRate": "20%"
+        }
+]
