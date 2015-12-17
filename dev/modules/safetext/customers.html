@@ -1,7 +1,7 @@
 <div class="panel">
     <div class="row wrapper">
         <div class="clearfix padder-lg">
-            <h4 class="pull-left m-b-none">{{names.length}} Customers</h4>
+            <h4 class="pull-left m-b-none">{{customers.length}} Customers</h4>
             <div class="pull-right">
                 <input type="text" class="form-control" placeholder="Search for a customer">
             </div>
@@ -9,16 +9,14 @@
         <hr>
         <div class="clearfix wrapper">
             <div class="list-group bottom-border no-radius">
-                <div class="col-md-4 m-b" ng-repeat="name in names track by $index">
+                <div class="col-md-4 m-b" ng-repeat="customer in customers track by $index">
                     <div class="list-group-item clickable" ng-click="$parent.popupOpen = true; $parent.selected = name">
-                        <a class="pull-left thumb-sm avatar m-r">
-                            <a class="pull-left">
-                            <avatar class="m-r-md" name="{{name}}"></avatar>
-                        </a>
+                        <a class="pull-left">
+                            <avatar class="m-r-md" name="{{customer.first_name}} {{customer.last_name}}"></avatar>
                         </a>
                         <div class="clear">
-                            <div>{{name}}</div>
-                            <small class="text-muted">07012341829</small>
+                            <div>{{customer.first_name}} {{customer.last_name}}</div>
+                            <small class="text-muted">{{customer.phone_number}}</small>
                         </div>
                     </div>
                 </div>
