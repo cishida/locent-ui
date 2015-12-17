@@ -1,5 +1,7 @@
 var settings = {
-    baseApiUrl: '/api',
+
+    baseApiUrl: '/locent-ui/dev/api',
+
     liveApiUrl: '/',
     jsonServerApi: {
         port: 8081,

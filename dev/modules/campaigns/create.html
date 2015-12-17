@@ -1,0 +1,60 @@
+
+<div class="panel">
+    <div class="row wrapper">
+        <div class="clearfix padder-lg">
+            <h4 class="pull-left m-b-none">
+                <span class="inline clickable fadeIn" ui-sref="app.campaigns"><i class="fa fa-angle-left icon m-r-sm"></i> Back</span>
+            </h4>
+        </div>
+        <hr>
+        <div class="col-xs-12 m-b-md">
+            <span class="wrapper col-md-12 bg-light m-b-lg">Step 1 : Messages</span>
+            <div class="col-md-6">
+                <h4 class="font-bold">Campaign name</h4>
+                <input type="text" class="form-control">
+                <h4 class="font-bold">Sms message to send</h4>
+                <textarea class="form-control input-md m-t-md" ng-model="selected.message" rows="5"></textarea>
+                <div class="controls m-t-sm">
+                    <p>Insert variables : </p>
+                    <button class="btn btn-default btn-sm m-b-xs m-r-xs" ng-repeat="(key, value) in sample" ng-click="add(key)">{{key}}</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h4 class="font-bold">Preview</h4>
+                <p>{{preview(selected.message)}}</p>
+                <hr>
+            </div>
+            <span class="wrapper col-md-12 bg-light m-b-lg">Step 2 : Audience & Pricing</span>
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <h4 class="font-bold">Customer Pool</h4>
+                    <select name="account" class="form-control m-b">
+                        <option value="option 1">Repeat Purchases</option>
+                        <option value="option 2">Cart Abandonment</option>
+                        <option value="option 3">Checkout</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="font-bold">Opt-in Time</h4>
+                    <select name="account" class="form-control m-b">
+                        <option value="option 1">Today</option>
+                        <option value="option 2">This Week</option>
+                        <option value="option 3">Last 30 Days</option>
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="font-bold">Audience Size</h4>
+                    <h2>622</h2>
+                </div>
+                <div class="col-md-3">
+                    <h4 class="font-bold">Pricing</h4>
+                    <h2>$71</h2>
+                </div>
+            </div>
+            <div class="col-md-12 m-t-lg">             
+                <button ng-click="open = false" class="btn btn-primary m-t-sm pull-right" type="button">confirm & send now</button>
+                <button class="btn btn-default m-t-sm no-border no-bg pull-right" type="button">Save Draft</button>
+            </div>
+        </div>
+    </div>
+</div>
