@@ -25,15 +25,10 @@ angular.module('app.keyword', ['ui.router'])
                     return MockAPI.all('customers').getList();
                 }]
             }
-        }).state('app.keyword.messages', {
-            url: '/messages',
-            templateUrl: 'modules/keyword/messages.html',
-            controller: 'KeywordMessagesCtrl'
-            controller: 'KeywordCustomersCtrl'
-        }).state('app.keyword.settings', {
-            url: '/settings',
-            templateUrl: 'modules/keyword/settings.html',
-            controller: 'KeywordSettingsCtrl'
+        }).state('app.keyword.options', {
+            url: '/options',
+            templateUrl: 'modules/keyword/options.html',
+            controller: 'KeywordOptionsCtrl'
         }).state('app.keyword.orders', {
             url: '/orders',
             templateUrl: 'modules/keyword/orders.html',
